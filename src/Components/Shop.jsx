@@ -1,5 +1,6 @@
 import React from "react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 import OrderPopup from "./Form-Order";
 
 const products = [
@@ -35,18 +36,28 @@ export default function Shop() {
       className="mx-auto bg-[#f5f5f0] text-[#59554d] py-16 px-6 lg:px-8"
       id="Shop"
     >
-      <div className="max-w-7xl mb-12">
+      <motion.div
+        className="max-w-7xl mb-12"
+        initial={{ opacity: 0, y: 30 }}
+        whileInView={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6, ease: "easeOut" }}
+        viewport={{ once: false, amount: 0.5 }}
+      >
         <h2 className="text-2xl font-bold">Shop Artwork</h2>
         <p className="text-base md:text-lg py-4">
           Explore our collection of unique artworks and find the perfect piece
           for your space.
         </p>
-      </div>
+      </motion.div>
 
       <div className="grid md:grid-cols-2 lg:grid-cols-2 xl:grid-cols-4 gap-8">
         {products.map((item, index) => (
-          <div
+          <motion.div
             key={index}
+            initial={{ opacity: 0, y: 40 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: index * 0.2 }}
+            viewport={{ amount: 0.5 }} // 👈 will replay every time you scroll away & back
             className="bg-white w-full h-[380px] shadow-md rounded-md overflow-hidden flex flex-col"
           >
             <img
@@ -68,8 +79,8 @@ export default function Shop() {
                 </p>
               </div>
 
-              {/* Keep the "link look" */}
-              <div className="mt-3  flex items-center gap-2 text-sm text-[#b18e63] font-medium">
+              {/* Order button */}
+              <div className="mt-3 flex items-center gap-2 text-sm text-[#b18e63] font-medium">
                 <OrderPopup
                   triggerText={
                     <span className="flex items-center space-x-2 cursor-pointer transition-all text-[#b18e63] hover:text-[#735c40]">
@@ -82,7 +93,7 @@ export default function Shop() {
                 />
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </div>
     </section>

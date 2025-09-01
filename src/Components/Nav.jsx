@@ -82,7 +82,7 @@ const Nav = () => {
                   "Services",
                   "Shop",
                   "Gallery",
-                  "Contact",
+                  "/Contact-Page",
                 ].map((item) => (
                   <motion.li
                     key={item}

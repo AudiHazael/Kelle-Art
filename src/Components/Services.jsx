@@ -86,7 +86,7 @@ export default function Services() {
                   />
                 ) : (
                   <Link
-                    to="/classes"
+                    to="/Contact-Page"
                     className="flex items-center gap-2 transition-all hover:text-[#735c40]"
                   >
                     <span>Start Learning</span>

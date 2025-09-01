@@ -47,7 +47,7 @@ const Nav = () => {
                     <Link
                       to={
                         item === "Home"
-                          ? "/home"
+                          ? "/"
                           : item === "Gallery"
                           ? "#Gallery"
                           : item === "Contact"
@@ -92,7 +92,7 @@ const Nav = () => {
                     <Link
                       to={
                         item === "Home"
-                          ? "#Hero"
+                          ? "/"
                           : item === "Gallery"
                           ? "#Gallery"
                           : item === "Contact"

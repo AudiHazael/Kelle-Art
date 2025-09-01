@@ -36,7 +36,7 @@ const cardVariants = {
   visible: {
     opacity: 1,
     y: 0,
-    transition: { duration: 1.0, type: "spring", stiffness: 80, damping: 12 },
+    transition: { duration: 0.75, type: "spring", stiffness: 80, damping: 12 },
   },
 };
 
@@ -51,7 +51,7 @@ export default function Services() {
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
-        viewport={{ amount: 0.75 }}
+        viewport={{ amount: 0.5 }}
       >
         {services.map((service, index) => (
           <motion.div

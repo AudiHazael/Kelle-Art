@@ -7,8 +7,8 @@ const fadeInUp = {
     opacity: 1,
     y: 0,
     transition: {
-      delay: i * 0.3,
-      duration: 0.8,
+      delay: i * 0.5,
+      duration: 1.0,
       type: "spring",
       stiffness: 60,
       damping: 15,
@@ -19,7 +19,7 @@ const fadeInUp = {
 function Hero() {
   return (
     <div
-      className="min-h-screen flex flex-col justify-center lg:items-center bg-[#394033]"
+      className="min-h-screen flex flex-col justify-center items-center bg-[#394033]"
       id="Hero"
     >
       <motion.div

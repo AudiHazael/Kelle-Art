@@ -43,7 +43,7 @@ export default function About() {
               className="rounded-md"
               loading="lazy"
               whileHover={{ scale: 1.05 }}
-              transition={{ duration: 0.5 }}
+              transition={{ duration: 0.7 }}
             />
           </motion.div>
 

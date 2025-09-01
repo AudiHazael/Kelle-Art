@@ -10,8 +10,8 @@ const Nav = () => {
     <motion.header
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
-      transition={{ duration: 0.6, ease: "easeOut" }}
-      className="w-full sticky top-0 z-50 border-b border-white/10 bg-[#3940339f] backdrop-blur-md shadow-lg"
+      transition={{ duration: 0.75, ease: "easeOut" }}
+      className="w-full sticky top-0 z-50 border-b border-white/10 bg-[#394033] backdrop-blur-md shadow-lg"
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
@@ -72,7 +72,7 @@ const Nav = () => {
               initial={{ opacity: 0, y: -20 }}
               animate={{ opacity: 1, y: 0 }}
               exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.4 }}
+              transition={{ duration: 0.75 }}
               className="md:hidden bg-inherit shadow-xl rounded-md p-4"
             >
               <ul className="flex flex-col space-y-4 text-[#e6d8c3] font-medium">

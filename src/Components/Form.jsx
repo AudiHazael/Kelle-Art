@@ -24,7 +24,7 @@ function Form() {
   return (
     <section id="Contact" className="bg-[#f9fafb] py-16 text-[#59554d]">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center-safe">
           {/* Left Column - Cards */}
           <div className="space-y-4">
             {/* Card 1 */}
@@ -32,11 +32,11 @@ function Form() {
               custom={0}
               initial="hidden"
               whileInView="visible"
-              viewport={{ once: true, amount: 0.3 }}
+              viewport={{ once: true, amount: 0.5 }}
               variants={cardVariants}
               className="flex items-start gap-4 bg-white shadow-md rounded-md p-6 hover:shadow-lg transition"
             >
-              <EnvelopeIcon className="w-8 h-8 text-[#735c40] shrink-0" />
+              <EnvelopeIcon className="md:w-8 h-6 md:h-8 w-6 text-[#735c40] shrink-0" />
               <div>
                 <h3 className="font-semibold text-md md:text-lg">Email Us</h3>
                 <p className="text-gray-600">youremail@gmail.com</p>
@@ -50,9 +50,9 @@ function Form() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={cardVariants}
-              className="flex items-start  bg-white shadow-md rounded-md p-6 hover:shadow-lg transition"
+              className="flex items-start gap-4 bg-white shadow-md rounded-md p-6 hover:shadow-lg transition"
             >
-              <PhoneIcon className="w-8 h-8 text-[#735c40] shrink-0" />
+              <PhoneIcon className="md:w-8 h-6 md:h-8 w-6 text-[#735c40] shrink-0" />
               <div>
                 <h3 className="font-semibold text-md md:text-lg">Call Us</h3>
                 <p className="text-sm md:text-md text-gray-600">
@@ -71,7 +71,7 @@ function Form() {
               className="bg-white shadow-md rounded-md hover:shadow-lg transition overflow-hidden"
             >
               <div className="p-4 flex items-start gap-4">
-                <MapPinIcon className="w-8 h-8 text-[#735c40] shrink-0" />
+                <MapPinIcon className="md:w-8 h-6 md:h-8 w-6 text-[#735c40] shrink-0" />
                 <div>
                   <h3 className="font-semibold text-md md:text-lg">Visit Us</h3>
                   <p className="text-sm md:text-md text-gray-600">
@@ -99,7 +99,7 @@ function Form() {
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 0.5 }}
+            viewport={{ once: true, amount: 1.0 }}
             transition={{
               type: "spring",
               stiffness: 60,

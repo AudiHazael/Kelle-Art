@@ -91,7 +91,7 @@ function OrderPopup({
 
               <div>
                 <label className="block text-sm font-medium mb-1">
-                  Reference Image (Optional)
+                  Reference Image (For custom art and commisions)
                 </label>
                 <input
                   type="file"

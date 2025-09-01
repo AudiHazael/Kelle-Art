@@ -30,7 +30,7 @@ export default function Gallery() {
             className="space-y-4"
           >
             <h2 className="text-3xl font-bold text-[#59554d]">Our Gallery</h2>
-            <p className="text-[#59554d]">
+            <p className="text-[#59554d] text-sm md:text-md">
               Explore the highlight of our journey and see how we are shaping
               the future of technology, one step at a time.
             </p>

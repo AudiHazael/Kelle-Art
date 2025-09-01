@@ -21,7 +21,7 @@ function Home() {
       <Contact />
       <Footer />
       <FloatingWhatsapp
-        phone="2348025325811"
+        phone="234 811 2378877"
         text="Hi! I'd love to order a pencil/charcoal portrait."
       />
     </div>

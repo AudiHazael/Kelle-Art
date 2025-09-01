@@ -51,7 +51,7 @@ function Hero() {
             </motion.h1>
 
             <motion.p
-              className="text-base md:text-lg pb-6"
+              className="text-base md:text-md lg:text-lg pb-6"
               custom={1.4}
               variants={fadeInUp}
             >

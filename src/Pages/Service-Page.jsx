@@ -10,7 +10,7 @@ function ServicePage() {
       <section className="about-hero bg-[#f5f5f0] py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl text-[#59554d] ">
           <h1 className="text-4xl font-extrabold">Our Services</h1>
-          <p className="text-base md:text-lg py-4">
+          <p className="text-sm md:text-md md:text-lg py-4">
             We offer a wide range of services to cater to your artistic needs.
           </p>
         </div>

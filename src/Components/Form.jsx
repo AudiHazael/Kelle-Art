@@ -99,7 +99,7 @@ function Form() {
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
-            viewport={{ once: true, amount: 1.0 }}
+            viewport={{ once: true, amount: 0.5 }}
             transition={{
               type: "spring",
               stiffness: 60,
@@ -113,74 +113,62 @@ function Form() {
               method="POST"
               className="space-y-6"
             >
-              {" "}
               <div>
-                {" "}
-                <label className="block text-sm font-medium mb-1">
-                  Name
-                </label>{" "}
+                <label className="block text-sm font-medium mb-1">Name</label>
                 <input
                   type="text"
                   name="name"
                   placeholder="Your name"
                   required
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-                />{" "}
-              </div>{" "}
+                />
+              </div>
               <div>
-                {" "}
-                <label className="block text-sm font-medium mb-1">
-                  Email
-                </label>{" "}
+                <label className="block text-sm font-medium mb-1">Email</label>
                 <input
                   type="email"
                   name="email"
                   placeholder="you@example.com"
                   required
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-                />{" "}
-              </div>{" "}
+                />
+              </div>
               <div>
-                {" "}
                 <label className="block text-sm font-medium mb-1">
-                  {" "}
-                  Subject{" "}
-                </label>{" "}
+                  Subject
+                </label>
                 <select
                   name="subject"
                   required
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
                 >
-                  {" "}
-                  <option value="">Select a subject</option>{" "}
-                  <option value="commission">Commission an Artwork</option>{" "}
-                  <option value="support">Support</option>{" "}
-                  <option value="partnership">Partnership</option>{" "}
-                  <option value="feedback">Feedback</option>{" "}
-                </select>{" "}
-              </div>{" "}
+                  <option value="">Select a subject</option>
+                  <option value="commission">Commission an Artwork</option>
+                  <option value="support">Support</option>
+                  <option value="partnership">Partnership</option>
+                  <option value="feedback">Feedback</option>
+                </select>
+              </div>
               <div>
-                {" "}
                 <label className="block text-sm font-medium mb-1">
-                  {" "}
-                  Message{" "}
-                </label>{" "}
+                  Message
+                </label>
                 <textarea
                   rows="4"
                   name="message"
                   placeholder="Write your message here..."
                   required
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-                ></textarea>{" "}
-              </div>{" "}
-              {/* Hidden Fields */}{" "}
-              <input type="hidden" name="_blacklist" value="spam, ads" />{" "}
-              <input type="hidden" name="_captcha" value="false" />{" "}
+                ></textarea>
+              </div>
+              {/* Hidden Fields */}
+              <input type="hidden" name="_blacklist" value="spam, ads" />
+              <input type="hidden" name="_captcha" value="false" />
               <input
                 type="hidden"
                 name="_autoresponse"
-                value="Hello, Thank you for reaching out to i4DT! 🎉 We’ve received your message and will get back to you as soon as possible."
-              />{" "}
+                value="Hello, Thank you for reaching. We’ve received your message and will get back to you as soon as possible."
+              />
               <button
                 type="submit"
                 className="inline-block px-6 md:px-8 py-3 font-semibold text-white transition bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3]"

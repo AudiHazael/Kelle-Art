@@ -6,6 +6,13 @@ function Footer() {
   return (
     <div>
       <footer className="footer footer-horizontal footer-center bg-gray-950 text-[#e6d8c3] rounded p-10">
+        <nav>
+          <div className="text-2xl font-bold flex items-center">
+            <a href="/" className="flex items-baseline space-x-1">
+              <img src="/Logo.png" alt="logo" className="h-10 object-contain" />
+            </a>
+          </div>
+        </nav>
         <nav className="grid grid-flow-col gap-4">
           <a className="link link-hover">About us</a>
           <a className="link link-hover">Contact</a>

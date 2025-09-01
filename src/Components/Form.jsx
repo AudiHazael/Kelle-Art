@@ -23,7 +23,7 @@ const cardVariants = {
 function Form() {
   return (
     <section id="Contact" className="bg-[#f9fafb] py-16 text-[#59554d]">
-      <div className="container mx-auto px-4 sm:px-6 lg:px-8">
+      <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-start">
           {/* Left Column - Cards */}
           <div className="space-y-4">
@@ -38,8 +38,8 @@ function Form() {
             >
               <EnvelopeIcon className="w-8 h-8 text-[#735c40] shrink-0" />
               <div>
-                <h3 className="font-semibold text-lg">Email Us</h3>
-                <p className="text-gray-600">i4dtng@gmail.com</p>
+                <h3 className="font-semibold text-md md:text-lg">Email Us</h3>
+                <p className="text-gray-600">youremail@gmail.com</p>
               </div>
             </motion.div>
 
@@ -50,12 +50,14 @@ function Form() {
               whileInView="visible"
               viewport={{ once: true, amount: 0.3 }}
               variants={cardVariants}
-              className="flex items-start gap-4 bg-white shadow-md rounded-md p-6 hover:shadow-lg transition"
+              className="flex items-start  bg-white shadow-md rounded-md p-6 hover:shadow-lg transition"
             >
               <PhoneIcon className="w-8 h-8 text-[#735c40] shrink-0" />
               <div>
-                <h3 className="font-semibold text-lg">Call Us</h3>
-                <p className="text-gray-600">+234 802 532 5811</p>
+                <h3 className="font-semibold text-md md:text-lg">Call Us</h3>
+                <p className="text-sm md:text-md text-gray-600">
+                  +234 811 237 8877
+                </p>
               </div>
             </motion.div>
 
@@ -71,8 +73,8 @@ function Form() {
               <div className="p-4 flex items-start gap-4">
                 <MapPinIcon className="w-8 h-8 text-[#735c40] shrink-0" />
                 <div>
-                  <h3 className="font-semibold text-lg">Visit Us</h3>
-                  <p className="text-gray-600">
+                  <h3 className="font-semibold text-md md:text-lg">Visit Us</h3>
+                  <p className="text-sm md:text-md text-gray-600">
                     Suite 12, Nepa Plaza PW Kubwa, Abuja,
                     <br className="hidden md:block" /> Nigeria, 9000110
                   </p>
@@ -104,7 +106,7 @@ function Form() {
               damping: 12,
               delay: 0.5,
             }}
-            className="bg-white shadow-md rounded-md p-4 md:p-8"
+            className="bg-white shadow-md rounded-md px-3 py-8 md:p-8"
           >
             <form
               action="https://formsubmit.co/YOUR_EMAIL_HERE"

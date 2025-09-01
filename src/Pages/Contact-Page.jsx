@@ -3,7 +3,7 @@ import Nav from "../Components/Nav";
 import Form from "../Components/Form";
 import Footer from "../Components/Footer";
 import FloatingWhatsapp from "../Components/FloatingWhatsApp";
-import { motion, AnimatePresence } from "framer-motion";
+import { motion } from "framer-motion";
 
 function ContactPage() {
   return (

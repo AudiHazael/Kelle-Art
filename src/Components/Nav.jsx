@@ -82,7 +82,7 @@ const Nav = () => {
                   "Services",
                   "Shop",
                   "Gallery",
-                  "/Contact-Page",
+                  "Contact",
                 ].map((item) => (
                   <motion.li
                     key={item}
@@ -96,7 +96,7 @@ const Nav = () => {
                           : item === "Gallery"
                           ? "#Gallery"
                           : item === "Contact"
-                          ? "/contact"
+                          ? "Contact-Page"
                           : `/${item.toLowerCase()}`
                       }
                       className="hover:text-[#735c40] border-[#e6d8c3]"

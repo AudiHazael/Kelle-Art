@@ -92,7 +92,7 @@ export default function About() {
       {/* --- Second Section --- */}
       <section className="max-w-7xl mx-auto px-6 md:px-8 pb-16 text-[#59554d] justify-center items-center">
         <motion.div
-          className="md:border md:border-white/10 rounded-md md:p-8 sm:space-y-2"
+          className="md:border md:border-white/10 rounded-md md:p-8 space-y-6"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
@@ -111,17 +111,21 @@ export default function About() {
             transition={{ duration: 0.7 }}
           />
 
-          <motion.h2
+          {/* <motion.h2
             className="text-lg md:text-xl font-bold sm:mt-8 md:mt-0 "
             variants={fadeInUp}
           >
             What I Do
-          </motion.h2>
+          </motion.h2> */}
 
           <motion.p
             className="text-sm lg:text-md font-normal leading-relaxed"
             variants={fadeInUp}
           >
+            <span className="text-lg md:text-xl font-bold sm:mt-8 md:mt-0 ">
+              What I Do
+            </span>{" "}
+            <br />
             Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
             facere ipsam tempora fugit, distinctio nostrum exercitationem
             obcaecati reprehenderit tempore sed doloribus ea blanditiis deleniti

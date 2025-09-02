@@ -60,13 +60,13 @@ export default function Shop() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ amount: 0.5 }} // 👈 will replay every time you scroll away & back
-            className="bg-white w-full h-[380px] shadow-md rounded-md overflow-hidden flex flex-col"
+            className="bg-white w-full h-fit shadow-md rounded-md overflow-hidden flex flex-col"
           >
             <img
               src={item.image}
               alt={item.title}
               content={item.accredit}
-              className="h-64 w-full object-cover rounded-t-md"
+              className="h-78 w-full object-cover rounded-t-md"
               loading="lazy"
             />
             <div className="p-4 text-left flex flex-col justify-between flex-grow">

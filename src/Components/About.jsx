@@ -29,7 +29,7 @@ export default function About() {
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.5 }}
+          viewport={{ once: false, amount: 0.2 }}
         >
           {/* Image */}
           <motion.div
@@ -95,7 +95,7 @@ export default function About() {
           className="md:border md:border-white/10 rounded-md md:p-8 sm:space-y-2"
           initial="hidden"
           whileInView="visible"
-          viewport={{ once: false, amount: 0.4 }}
+          viewport={{ once: false, amount: 0.2 }}
           variants={containerVariants}
         >
           {/* Floated video first so text wraps correctly */}

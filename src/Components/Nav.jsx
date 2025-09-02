@@ -16,8 +16,8 @@ const Nav = () => {
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
-          <div className="text-2xl font-bold flex items-center">
-            <a href="/" className="flex items-center justify-center">
+          <div className="text-2xl font-bold flex md:justify-evenly items-center">
+            <a href="/" className="flex items-center justify-between">
               <img
                 src="/logo-one.png"
                 alt="logo"

@@ -99,7 +99,7 @@ function Hero() {
       </motion.div>
 
       {/* Mobile Image */}
-      <motion.div
+      {/* <motion.div
         className="flex flex-col justify-center items-center py-6 md:py-0"
         custom={2.2}
         variants={fadeInUp}
@@ -113,7 +113,7 @@ function Hero() {
           className="block lg:hidden"
           loading="lazy"
         />
-      </motion.div>
+      </motion.div> */}
     </div>
   );
 }

@@ -21,7 +21,7 @@ const fadeInUp = {
 
 export default function About() {
   return (
-    <div className="bg-[#f5f5f0]" id="About">
+    <div className="bg-[#f5f5f0] space-y-12" id="About">
       {/* --- First Section --- */}
       <section className="max-w-7xl mx-auto px-8 pt-16 space-y-6 text-[#59554d]">
         <motion.div
@@ -90,9 +90,9 @@ export default function About() {
       </section>
 
       {/* --- Second Section --- */}
-      <section className="max-w-7xl mx-auto px-6 md:px-8 pb-16 text-[#59554d]">
+      <section className="max-w-7xl mx-auto px-6 md:px-8 pb-16 text-[#59554d] justify-center items-center">
         <motion.div
-          className="md:border md:border-white/10 rounded-md md:p-8"
+          className="md:border md:border-white/10 rounded-md md:p-8 sm:space-y-2"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.4 }}
@@ -104,7 +104,7 @@ export default function About() {
             controls
             loop
             muted
-            className="md:float-left mr-6 w-full rounded-md shadow-lg md:w-80 lg:w-96 h-auto object-contain"
+            className="md:float-left mr-6 w-full sm:mb-4 md:mb-0 rounded-md shadow-lg md:w-80 lg:w-96 h-auto object-contain"
             loading="lazy"
             variants={fadeInUp}
             whileHover={{ scale: 1.05 }}
@@ -112,7 +112,7 @@ export default function About() {
           />
 
           <motion.h2
-            className="text-lg md:text-xl font-bold sm:pt-4 sm:pb-2 "
+            className="text-lg md:text-xl font-bold sm:mt-8 md:mt-0 "
             variants={fadeInUp}
           >
             What I Do

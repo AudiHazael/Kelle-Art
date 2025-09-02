@@ -26,9 +26,13 @@ function Footer() {
     <div>
       <footer className="footer footer-horizontal footer-center bg-gray-950 text-[#e6d8c3] rounded pb-4 pt-10">
         <nav>
-          <div className="text-2xl font-bold flex items-center">
-            <a href="/" className="flex items-center space-x-1">
-              <img src="/Logo.png" alt="logo" className="h-10 object-contain" />
+          <div className="flex items-center">
+            <a href="/" className="flex items-center space-x-1 m-o p-0">
+              <img
+                src="/logo-three.png"
+                alt="logo"
+                className="h-24 object-contain"
+              />
             </a>
           </div>
         </nav>
@@ -39,7 +43,7 @@ function Footer() {
           <a className="link link-hover">Shop</a>
         </nav>
         <nav>
-          <motion.div className="flex space-x-4 my-4" variants={fadeInUp}>
+          <motion.div className="flex space-x-4" variants={fadeInUp}>
             <a href="https://facebook.com" target="_blank" rel="noreferrer">
               <FaFacebookF className="h-5 w-5" style={{ color: "#1877F2" }} />
             </a>

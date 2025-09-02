@@ -22,7 +22,7 @@ const cardVariants = {
 
 function Form() {
   return (
-    <section id="Contact" className="bg-[#f9fafb] py-16 text-[#59554d]">
+    <section id="Contact" className="bg-[#f9fafb] py-2 text-[#59554d]">
       <div className="container mx-auto px-4 lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center-safe">
           {/* Left Column - Cards */}

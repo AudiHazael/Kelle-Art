@@ -6,14 +6,12 @@ import "swiper/css";
 import "swiper/css/pagination";
 
 const images = [
-  { src: "https://via.placeholder.com/400x400", alt: "Image 1" },
-  { src: "https://via.placeholder.com/400x400", alt: "Image 2" },
-  { src: "https://via.placeholder.com/400x400", alt: "Image 3" },
-  { src: "https://via.placeholder.com/400x400", alt: "Image 4" },
-  { src: "https://via.placeholder.com/400x400", alt: "Image 5" },
-  { src: "https://via.placeholder.com/400x400", alt: "Image 6" },
-  { src: "https://via.placeholder.com/400x400", alt: "Image 7" },
-  { src: "https://via.placeholder.com/400x400", alt: "Image 8" },
+  { src: "/IMG_1818.png", alt: "Image 1" },
+  { src: "/IMG_1474.png", alt: "Image 2" },
+  { src: "/IMG_2076.JPG", alt: "Image 3" },
+  { src: "/IMG_1474.png", alt: "Image 4" },
+  { src: "/IMG_2088.png", alt: "Image 5" },
+  { src: "/couple.png", alt: "Image 6" },
 ];
 
 export default function Gallery() {

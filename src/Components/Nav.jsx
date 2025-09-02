@@ -11,14 +11,23 @@ const Nav = () => {
       initial={{ y: -80, opacity: 0 }}
       animate={{ y: 0, opacity: 1 }}
       transition={{ duration: 0.75, ease: "easeOut" }}
-      className="w-full sticky top-0 z-50 border-b border-white/10 bg-[#394033] backdrop-blur-md shadow-lg"
+      className="w-full sticky top-0 z-50 bg-[#394033] backdrop-blur-md shadow-lg"
     >
       <div className="container mx-auto px-4">
         <div className="flex justify-between items-center py-4">
           {/* Logo */}
           <div className="text-2xl font-bold flex items-center">
-            <a href="/" className="flex items-baseline space-x-1">
-              <img src="/Logo.png" alt="logo" className="h-10 object-contain" />
+            <a href="/" className="flex items-center justify-center">
+              <img
+                src="/logo-one.png"
+                alt="logo"
+                className="h-10 object-contain"
+              />
+              <img
+                src="/logo-four.png"
+                alt="logo"
+                className="h-10 object-contain"
+              />
             </a>
           </div>
 
@@ -82,7 +91,7 @@ const Nav = () => {
                   "Services",
                   "Shop",
                   "Gallery",
-                  "Contact",
+                  "Contact-Page",
                 ].map((item) => (
                   <motion.li
                     key={item}

@@ -8,14 +8,18 @@ const services = [
     title: "Commission Artwork",
     excerpt:
       "Capture your likeness or that of a loved one with a detailed pencil or charcoal portrait, drawn with precision and emotion.",
-    image: "https://via.placeholder.com/400x400",
+    image: "/commission.png",
+    accredit:
+      'Photo by <a href="https://unsplash.com/@mejlivg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Guillaume Didelet</a> on <a href="https://unsplash.com/photos/an-easel-with-a-painting-on-it-in-front-of-a-window-77Occni12cs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
     type: "commission",
   },
   {
     title: "Art Classes & Tutorials",
     excerpt:
       "Learn the art of shading, sketching, and charcoal drawing through engaging lessons tailored for beginners and enthusiasts.",
-    image: "https://via.placeholder.com/400x400",
+    image: "/teaching-art.jpg",
+    accredit:
+      '<a href="https://www.freepik.com/free-photo/creative-students-looking-draw-inspiration-tablet-sketching-vase-ideas-canvas-using-graphic-pencil-working-artistic-masterpiece-art-class-concept-people-drawing-creative-atelier_22454421.htm">Image by DC Studio on Freepik</a>',
     type: "learning",
   },
 ];
@@ -63,7 +67,8 @@ export default function Services() {
             <img
               src={service.image}
               alt={service.title}
-              className="h-48 w-full object-cover"
+              content={service.accredit}
+              className="h-64 w-full object-cover"
               loading="lazy"
             />
 

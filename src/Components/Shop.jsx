@@ -7,25 +7,27 @@ const products = [
   {
     title: "Single Portrait",
     price: "₦30,000",
-    image: "/portrait.jpg",
+    image: "/IMG_1809.png",
     description: "A detailed pencil or charcoal portrait of one person.",
   },
   {
     title: "Couple Portrait",
     price: "₦50,000",
-    image: "/couple.jpg",
+    image: "/couple.png",
     description: "Celebrate love with a hand-drawn portrait of two people.",
   },
   {
-    title: "Family Drawing",
+    title: "Abstract Drawing",
     price: "₦80,000",
-    image: "/family.jpg",
+    image: "/abstract.jpg",
     description: "A timeless family keepsake, perfect for your living room.",
+    accredit:
+      '<a href="https://www.freepik.com/free-ai-image/abstract-dadaism-concept_383251065.htm">Image by freepik</a>',
   },
   {
     title: "Custom Art",
     price: "Contact for Price",
-    image: "/custom.jpg",
+    image: "/IMG_2920.PNG",
     description: "Unique commissions tailored to your vision and story.",
   },
 ];
@@ -63,7 +65,8 @@ export default function Shop() {
             <img
               src={item.image}
               alt={item.title}
-              className="h-58 w-full object-cover rounded-t-md"
+              content={item.accredit}
+              className="h-64 w-full object-cover rounded-t-md"
               loading="lazy"
             />
             <div className="p-4 text-left flex flex-col justify-between flex-grow">

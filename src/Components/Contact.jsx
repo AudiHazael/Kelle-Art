@@ -14,9 +14,7 @@ function Contact() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.5 }}
           >
-            <h2 className="text-2xl md:text-3xl font-bold mb-4">
-              Get in Touch
-            </h2>
+            <h2 className="text-2xl md:text-3xl font-bold">Get in Touch</h2>
             <p className="text-[#59554d] text-sm md:text-md">
               Have questions, ideas, or just want to connect? Reach out to us
               using the details below or send us a message directly.

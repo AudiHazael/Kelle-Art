@@ -4,6 +4,9 @@
 @plugin "daisyui";
 
 /* Global styles */
+html {
+  font-size: 90%;
+}
 html,
 body,
 #root {

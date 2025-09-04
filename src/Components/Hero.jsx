@@ -23,7 +23,7 @@ function Hero() {
       className="relative min-h-fit py-24 flex items-center justify-center bg-[url('/lovely-art-studio-compositio.jpg')] bg-cover bg-center px-4 text-center"
     >
       {/* Dark overlay */}
-      <div className="absolute inset-0 bg-black/60"></div>
+      <div className="absolute inset-0 bg-black/50"></div>
 
       {/* Hero Content */}
       <motion.div

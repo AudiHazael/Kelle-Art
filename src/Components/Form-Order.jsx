@@ -35,7 +35,7 @@ function OrderPopup({
 
             {/* Form */}
             <form
-              action="https://formsubmit.co/"
+              action="https://formsubmit.co/a28d1a59533dbecc818930a6bcab01b3"
               method="POST"
               className="space-y-4"
             >
@@ -112,6 +112,16 @@ function OrderPopup({
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
                 ></textarea>
               </div>
+
+              {/* Hidden Fields */}
+              <input type="hidden" name="_blacklist" value="spam, ads" />
+              <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_cc" value="hazaelau@gmail.com" />
+              <input
+                type="hidden"
+                name="_autoresponse"
+                value="Hello, Thank you for reaching. We’ve received your order. Wewill get back to you as soon as possible."
+              />
 
               <button
                 type="submit"

@@ -52,18 +52,16 @@ export default function About() {
           >
             <h2 className="text-lg md:text-xl font-bold">I am Isaac Ekele</h2>
 
-            <p className="text-sm lg:text-md font-normal mt-2 leading-relaxed">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit.
-              Consectetur quis vero iusto magnam aliquid illo! Id, perspiciatis
-              alias vero corrupti molestias ullam quidem, sed eum numquam velit
-              sit, voluptates tenetur. <br />
-              <br />
-              Qui non laboriosam debitis aut impedit animi assumenda in quidem
-              maiores recusandae repellat rerum consectetur eligendi, commodi
-              dolorum. Commodi quisquam modi quo dicta odio reprehenderit ex!
-              Labore accusantium sequi molestias placeat omnis voluptates,
-              recusandae minima dignissimos necessitatibus, repudiandae fugiat
-              porro natus quaerat!
+            <p className="text-base lg:text-md font-normal mt-2 leading-relaxed">
+              Artist Kelle (Isaac Ekele) is a Nigerian pencil and digital artist
+              whose hyper-realistic portraits have captured the attention of
+              clients around the world. <br /> Based in Abuja, Nigeria, Kelle
+              has been refining his craft for more than 15 years, specializing
+              in detailed graphite drawings and memorial artworks that preserve
+              cherished memories in timeless form. <br /> His portfolio includes
+              everything from intimate family portraits to large-scale collages
+              and commemorative works, often blending emotional storytelling
+              with technical mastery.
             </p>
 
             {/* Social Links */}
@@ -109,19 +107,21 @@ export default function About() {
             variants={fadeInUp}
           >
             <h2 className="text-lg md:text-xl font-bold mb-4">What I Do</h2>
-            <p className="text-sm lg:text-md font-normal leading-relaxed">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-              facere ipsam tempora fugit, distinctio nostrum exercitationem
-              obcaecati reprehenderit tempore sed doloribus ea blanditiis
-              deleniti dolore? Lorem ipsum dolor sit, amet consectetur
-              adipisicing elit. Provident, dicta. Deleniti saepe eveniet quo
-              natus? <br />
+            <p className="text-base lg:text-md font-normal leading-relaxed">
+              Kelle’s work is defined by his meticulous attention to detail,
+              precision shading, and ability to capture likeness with depth and
+              emotion. His pieces are often more than drawings, they are
+              legacies. Many clients commission him for memorial portraits of
+              lost loved ones, generational family pieces, or milestone
+              celebrations. Whether through a single subject or multi-layered
+              composition, Kelle’s portraits embody love, remembrance, and
+              heritage.
               <br />
-              Qui non laboriosam debitis aut impedit animi assumenda in quidem
-              maiores recusandae repellat rerum consectetur eligendi, commodi
-              dolorum. Commodi quisquam modi quo dicta odio reprehenderit ex!
-              Labore accusantium sequi molestias placeat omnis voluptates,
-              recusandae minima dignissimos.
+              <br />
+              Though rooted in Nigeria, Kelle’s art has traveled far. His
+              clientele spans across the United States, the UK, and beyond. He
+              ships worldwide, with each piece carefully packaged to ensure safe
+              delivery.
             </p>
           </motion.div>
           {/* Video Column */}

@@ -46,7 +46,7 @@ export default function Shop() {
         viewport={{ once: false, amount: 0.4 }}
       >
         <h2 className="text-2xl font-bold">Shop Artwork</h2>
-        <p className="text-base md:text-lg py-4">
+        <p className="text-md md:text-lg py-4">
           Explore our collection of unique artworks and find the perfect piece
           for your space.
         </p>

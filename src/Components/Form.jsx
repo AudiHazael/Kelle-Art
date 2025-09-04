@@ -109,7 +109,7 @@ function Form() {
             className="bg-white shadow-md rounded-md px-3 py-8 md:p-8"
           >
             <form
-              action="https://formsubmit.co/Talk2Artistkelle@gmail.com"
+              action="https://formsubmit.co/a28d1a59533dbecc818930a6bcab01b3"
               method="POST"
               className="space-y-6"
             >
@@ -145,7 +145,7 @@ function Form() {
                   <option value="">Select a subject</option>
                   <option value="commission">Commission an Artwork</option>
                   <option value="support">Support</option>
-                  <option value="partnership">Partnership</option>
+                  <option value="partnership">Learn Art</option>
                   <option value="feedback">Feedback</option>
                 </select>
               </div>

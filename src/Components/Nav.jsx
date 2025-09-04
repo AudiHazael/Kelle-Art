@@ -57,9 +57,9 @@ const Nav = () => {
                       to={
                         item === "Home"
                           ? "/"
-                          : item === "Gallery"
-                          ? "#Gallery"
-                          : item === "Contact"
+                          : // : item === "Gallery"
+                          // ? "#Gallery"
+                          item === "Contact"
                           ? "/Contact-Page"
                           : `/${item.toLowerCase()}`
                       }
@@ -90,8 +90,8 @@ const Nav = () => {
                   "About",
                   "Services",
                   "Shop",
-                  "Gallery",
-                  "Contact-Page",
+                  // "Gallery",
+                  "Contact",
                 ].map((item) => (
                   <motion.li
                     key={item}

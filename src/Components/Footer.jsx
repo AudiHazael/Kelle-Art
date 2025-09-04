@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const containerVariants = {
   hidden: {},
@@ -43,23 +42,29 @@ function Footer() {
           <a className="link link-hover">Shop</a>
         </nav>
         <nav>
-          <motion.div className="flex space-x-4" variants={fadeInUp}>
-            <a href="https://facebook.com" target="_blank" rel="noreferrer">
+          <div className="flex space-x-4 my-4" variants={fadeInUp}>
+            <a
+              href="https://www.facebook.com/share/1GqLJSYEur/?mibextid=wwXIfr"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaFacebookF className="h-5 w-5" style={{ color: "#1877F2" }} />
             </a>
-
-            <a href="https://instagram.com" target="_blank" rel="noreferrer">
+            <a
+              href="https://www.instagram.com/artist_kelle?igsh=MWwzNDhxd3VweWVicw%3D%3D&utm_source=qr"
+              target="_blank"
+              rel="noreferrer"
+            >
               <FaInstagram className="h-5 w-5" style={{ color: "#E4405F" }} />
             </a>
-
-            <a href="https://x.com" target="_blank" rel="noreferrer">
-              <FaXTwitter className="h-5 w-5" style={{ color: "#e6d8c3" }} />
+            <a
+              href="https://www.tiktok.com/@theartistkelle?_t=ZN-8zQgMfEQpK2&_r=1"
+              target="_blank"
+              rel="noreferrer"
+            >
+              <FaTiktok className="h-5 w-5" style={{ color: "#f1f1f1" }} />
             </a>
-
-            <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-              <FaLinkedinIn className="h-5 w-5" style={{ color: "#0A66C2" }} />
-            </a>
-          </motion.div>
+          </div>
         </nav>
         <aside>
           <p>

@@ -5,7 +5,7 @@ import Form from "./Form";
 function Contact() {
   return (
     <section id="Contact" className="bg-[#f9fafb] py-16 text-[#59554d]">
-      <div className="max-w-7xl mx-auto px-4 lg:px-8">
+      <div className="max-w-7xl mx-auto md:px-4 lg:px-8">
         {/* Section Heading */}
         <div className="mb-12">
           <motion.div

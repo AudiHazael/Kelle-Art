@@ -9,17 +9,15 @@ const services = [
     excerpt:
       "Capture your likeness or that of a loved one with a detailed pencil or charcoal portrait, drawn with precision and emotion.",
     image: "/commission.png",
-    accredit:
-      'Photo by <a href="https://unsplash.com/@mejlivg?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Guillaume Didelet</a> on <a href="https://unsplash.com/photos/an-easel-with-a-painting-on-it-in-front-of-a-window-77Occni12cs?utm_content=creditCopyText&utm_medium=referral&utm_source=unsplash">Unsplash</a>',
+
     type: "commission",
   },
   {
     title: "Art Classes & Tutorials",
     excerpt:
       "Learn the art of shading, sketching, and charcoal drawing through engaging lessons tailored for beginners and enthusiasts.",
-    image: "/teaching-art.jpg",
-    accredit:
-      '<a href="https://www.freepik.com/free-photo/creative-students-looking-draw-inspiration-tablet-sketching-vase-ideas-canvas-using-graphic-pencil-working-artistic-masterpiece-art-class-concept-people-drawing-creative-atelier_22454421.htm">Image by DC Studio on Freepik</a>',
+    image: "/IMG_3959 1.png",
+
     type: "learning",
   },
 ];
@@ -47,11 +45,11 @@ const cardVariants = {
 export default function Services() {
   return (
     <section
-      className="mx-auto bg-white/95 text-[#59554d] py-16 px-4 sm:px-6 lg:px-8"
+      className="mx-auto bg-white/95 text-[#59554d] py-16 px-4 sm:px-6 lg:px-16"
       id="Services"
     >
       <motion.div
-        className="mx-auto  md:py-16 md:px-16 rounded-md grid md:grid-cols-2 lg:grid-cols-2 gap-8"
+        className="md:py-16 md:px-16 rounded-md grid md:grid-cols-2 lg:grid-cols-2 gap-8"
         variants={containerVariants}
         initial="hidden"
         whileInView="visible"
@@ -68,7 +66,7 @@ export default function Services() {
               src={service.image}
               alt={service.title}
               content={service.accredit}
-              className="h-64 w-full object-cover"
+              className="h-96 w-full object-cover"
               loading="lazy"
             />
 

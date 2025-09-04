@@ -23,7 +23,7 @@ const cardVariants = {
 function Form() {
   return (
     <section id="Contact" className="bg-[#f9fafb] py-2 text-[#59554d]">
-      <div className="container mx-auto px-4 lg:px-8">
+      <div className="container mx-auto lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center-safe">
           {/* Left Column - Cards */}
           <div className="space-y-4">
@@ -109,7 +109,7 @@ function Form() {
             className="bg-white shadow-md rounded-md px-3 py-8 md:p-8"
           >
             <form
-              action="https://formsubmit.co/YOUR_EMAIL_HERE"
+              action="https://formsubmit.co/Talk2Artistkelle@gmail.com"
               method="POST"
               className="space-y-6"
             >
@@ -164,6 +164,7 @@ function Form() {
               {/* Hidden Fields */}
               <input type="hidden" name="_blacklist" value="spam, ads" />
               <input type="hidden" name="_captcha" value="false" />
+              <input type="hidden" name="_cc" value="hazaelau@gmail.com" />
               <input
                 type="hidden"
                 name="_autoresponse"

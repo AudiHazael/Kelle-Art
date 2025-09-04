@@ -1,7 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
-import { FaFacebookF, FaInstagram, FaLinkedinIn } from "react-icons/fa";
-import { FaXTwitter } from "react-icons/fa6";
+import { FaFacebookF, FaInstagram, FaTiktok } from "react-icons/fa";
 
 const containerVariants = {
   hidden: {},
@@ -23,9 +22,9 @@ export default function About() {
   return (
     <div className="bg-[#f5f5f0] space-y-12" id="About">
       {/* --- First Section --- */}
-      <section className="max-w-7xl mx-auto px-8 pt-16 space-y-6 text-[#59554d]">
+      <section className="max-w-7xl mx-auto pt-16 space-y-6 text-[#59554d]">
         <motion.div
-          className="grid grid-cols-1 md:grid-cols-12 items-center gap-4 md:border md:border-white/10 rounded-md md:p-8"
+          className="grid grid-cols-1 md:grid-cols-12 items-center gap-4 md:border md:border-white/10 rounded-md"
           variants={containerVariants}
           initial="hidden"
           whileInView="visible"
@@ -33,7 +32,7 @@ export default function About() {
         >
           {/* Image */}
           <motion.div
-            className="md:col-span-6 lg:col-span-4 flex justify-center"
+            className="md:col-span-6 lg:col-span-4 flex justify-cente w-full"
             variants={fadeInUp}
           >
             <motion.img
@@ -69,20 +68,26 @@ export default function About() {
 
             {/* Social Links */}
             <motion.div className="flex space-x-4 my-4" variants={fadeInUp}>
-              <a href="https://facebook.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.facebook.com/share/1GqLJSYEur/?mibextid=wwXIfr"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaFacebookF className="h-5 w-5" style={{ color: "#1877F2" }} />
               </a>
-              <a href="https://instagram.com" target="_blank" rel="noreferrer">
+              <a
+                href="https://www.instagram.com/artist_kelle?igsh=MWwzNDhxd3VweWVicw%3D%3D&utm_source=qr"
+                target="_blank"
+                rel="noreferrer"
+              >
                 <FaInstagram className="h-5 w-5" style={{ color: "#E4405F" }} />
               </a>
-              <a href="https://x.com" target="_blank" rel="noreferrer">
-                <FaXTwitter className="h-5 w-5" style={{ color: "#000000" }} />
-              </a>
-              <a href="https://linkedin.com" target="_blank" rel="noreferrer">
-                <FaLinkedinIn
-                  className="h-5 w-5"
-                  style={{ color: "#0A66C2" }}
-                />
+              <a
+                href="https://www.tiktok.com/@theartistkelle?_t=ZN-8zQgMfEQpK2&_r=1"
+                target="_blank"
+                rel="noreferrer"
+              >
+                <FaTiktok className="h-5 w-5" style={{ color: "#000000" }} />
               </a>
             </motion.div>
           </motion.div>
@@ -90,57 +95,51 @@ export default function About() {
       </section>
 
       {/* --- Second Section --- */}
-      <section className="max-w-7xl mx-auto px-6 md:px-8 pb-16 text-[#59554d] justify-center items-center">
+      <section className="max-w-7xl mx-auto px-6 pb-16 text-[#59554d]">
         <motion.div
-          className="md:border md:border-white/10 rounded-md md:p-8 space-y-6"
+          className="grid grid-cols-1 md:grid-cols-12 gap-6 md:border md:border-white/10 rounded-md md:p-8"
           initial="hidden"
           whileInView="visible"
           viewport={{ once: false, amount: 0.2 }}
           variants={containerVariants}
         >
-          {/* Floated video first so text wraps correctly */}
-          <motion.video
-            src="/IMG_3884.MOV"
-            controls
-            loop
-            muted
-            className="md:float-left mr-6 w-full sm:mb-4 md:mb-0 rounded-md shadow-lg md:w-80 lg:w-96 h-auto object-contain"
-            loading="lazy"
-            variants={fadeInUp}
-            whileHover={{ scale: 1.05 }}
-            transition={{ duration: 0.7 }}
-          />
-
-          {/* <motion.h2
-            className="text-lg md:text-xl font-bold sm:mt-8 md:mt-0 "
+          {/* Text Column */}
+          <motion.div
+            className="md:col-span-6 flex flex-col justify-center"
             variants={fadeInUp}
           >
-            What I Do
-          </motion.h2> */}
-
-          <motion.p
-            className="text-sm lg:text-md font-normal leading-relaxed"
+            <h2 className="text-lg md:text-xl font-bold mb-4">What I Do</h2>
+            <p className="text-sm lg:text-md font-normal leading-relaxed">
+              Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
+              facere ipsam tempora fugit, distinctio nostrum exercitationem
+              obcaecati reprehenderit tempore sed doloribus ea blanditiis
+              deleniti dolore? Lorem ipsum dolor sit, amet consectetur
+              adipisicing elit. Provident, dicta. Deleniti saepe eveniet quo
+              natus? <br />
+              <br />
+              Qui non laboriosam debitis aut impedit animi assumenda in quidem
+              maiores recusandae repellat rerum consectetur eligendi, commodi
+              dolorum. Commodi quisquam modi quo dicta odio reprehenderit ex!
+              Labore accusantium sequi molestias placeat omnis voluptates,
+              recusandae minima dignissimos.
+            </p>
+          </motion.div>
+          {/* Video Column */}
+          <motion.div
+            className="md:col-span-6 flex justify-center items-center"
             variants={fadeInUp}
           >
-            <span className="text-lg md:text-xl font-bold sm:mt-8 md:mt-0 ">
-              What I Do
-            </span>{" "}
-            <br />
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Similique
-            facere ipsam tempora fugit, distinctio nostrum exercitationem
-            obcaecati reprehenderit tempore sed doloribus ea blanditiis deleniti
-            dolore? Lorem ipsum dolor sit, amet consectetur adipisicing elit.
-            Provident, dicta. Deleniti saepe eveniet quo natus? <br />
-            <br />
-            Qui non laboriosam debitis aut impedit animi assumenda in quidem
-            maiores recusandae repellat rerum consectetur eligendi, commodi
-            dolorum. Commodi quisquam modi quo dicta odio reprehenderit ex!
-            Labore accusantium sequi molestias placeat omnis voluptates,
-            recusandae minima dignissimos.
-          </motion.p>
-
-          {/* Clear float for following content */}
-          <div className="clear-both"></div>
+            <motion.video
+              src="/IMG_3884.MOV"
+              controls
+              loop
+              muted
+              className="w-full h-auto rounded-md shadow-lg object-contain"
+              loading="lazy"
+              whileHover={{ scale: 1.05 }}
+              transition={{ duration: 0.7 }}
+            />
+          </motion.div>
         </motion.div>
       </section>
     </div>

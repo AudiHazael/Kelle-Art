@@ -128,6 +128,7 @@ function Form() {
             className="bg-white shadow-md rounded-md px-3 py-8 md:p-8"
           >
             <form
+              onSubmit={handleSubmit}
               action="https://formsubmit.co/a28d1a59533dbecc818930a6bcab01b3"
               method="POST"
               className="space-y-6"
@@ -205,9 +206,8 @@ function Form() {
                 type="submit"
                 className="inline-block px-6 md:px-8 py-3 font-semibold text-white transition bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3]"
               >
-                {" "}
-                Send Message{" "}
-              </button>{" "}
+                Send Message
+              </button>
             </form>
             {showPopup && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">

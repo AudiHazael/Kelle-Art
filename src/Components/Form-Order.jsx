@@ -7,6 +7,26 @@ function OrderPopup({
 }) {
   const [isOpen, setIsOpen] = useState(false);
 
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    form.reset(); // clear form
+    setShowPopup(true); // show popup
+  };
+
   return (
     <div>
       {/* Trigger Button */}
@@ -35,6 +55,7 @@ function OrderPopup({
 
             {/* Form */}
             <form
+              onSubmit={handleSubmit}
               action="https://formsubmit.co/a28d1a59533dbecc818930a6bcab01b3"
               method="POST"
               className="space-y-4"
@@ -130,6 +151,22 @@ function OrderPopup({
                 Submit
               </button>
             </form>
+            {showPopup && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="bg-white rounded-lg p-6 w-11/12 max-w-md mx-auto text-center">
+                  <h3 className="text-lg font-semibold mb-4">Thank You!</h3>
+                  <p className="text-sm text-gray-600">
+                    Your message has been sent successfully.
+                  </p>
+                  <button
+                    onClick={() => setShowPopup(false)}
+                    className="mt-4 inline-block px-4 py-2 bg-[#735c40] text-white rounded-md"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
           </div>
         </div>
       )}

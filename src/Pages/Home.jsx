@@ -4,7 +4,7 @@ import Hero from "../Components/Hero";
 import About from "../Components/About";
 import Services from "../Components/Services";
 import Shop from "../Components/Shop";
-import Gallery from "../Components/Gallery";
+import Art from "../Components/Art";
 import Contact from "../Components/Contact";
 import Footer from "../Components/Footer";
 import FloatingWhatsapp from "../Components/FloatingWhatsApp";
@@ -17,7 +17,7 @@ function Home() {
       <About />
       <Services />
       <Shop />
-      <Gallery />
+      <Art />
       <Contact />
       <Footer />
       <FloatingWhatsapp

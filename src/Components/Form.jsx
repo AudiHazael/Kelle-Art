@@ -73,7 +73,7 @@ function Form() {
               <EnvelopeIcon className="md:w-8 h-6 md:h-8 w-6 text-[#735c40] shrink-0" />
               <div>
                 <h3 className="font-semibold text-md md:text-lg">Email Us</h3>
-                <p className="text-gray-600">youremail@gmail.com</p>
+                <p className="text-gray-600">Talk2Artistkelle@gmail.com</p>
               </div>
             </motion.div>
 

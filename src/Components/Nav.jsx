@@ -57,9 +57,9 @@ const Nav = () => {
                       to={
                         item === "Home"
                           ? "/"
-                          : // : item === "Gallery"
-                          // ? "#Gallery"
-                          item === "Contact"
+                          : item === "Gallery"
+                          ? "/Gallery"
+                          : item === "Contact"
                           ? "/Contact-Page"
                           : `/${item.toLowerCase()}`
                       }
@@ -90,7 +90,7 @@ const Nav = () => {
                   "About",
                   "Services",
                   "Shop",
-                  // "Gallery",
+                  "Gallery",
                   "Contact",
                 ].map((item) => (
                   <motion.li
@@ -103,9 +103,9 @@ const Nav = () => {
                         item === "Home"
                           ? "/"
                           : item === "Gallery"
-                          ? "#Gallery"
+                          ? "/Gallery"
                           : item === "Contact"
-                          ? "Contact-Page"
+                          ? "/Contact-Page"
                           : `/${item.toLowerCase()}`
                       }
                       className="hover:text-[#735c40] border-[#e6d8c3]"

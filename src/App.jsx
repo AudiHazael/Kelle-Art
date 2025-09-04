@@ -6,6 +6,7 @@ import ContactPage from "./Pages/Contact-Page";
 import AboutPage from "./Pages/About-Page";
 import ServicePage from "./Pages/Service-Page";
 import ShopPage from "./Pages/Shop-Page";
+import Gallery from "./Pages/Gallery";
 
 // import Error from "./Pages/Error";
 
@@ -25,6 +26,7 @@ function App() {
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
         <Route path="/shop" element={<ShopPage />} />
+        <Route path="/gallery" element={<Gallery />} />
         {/* <Route path="*" element={<Error />} /> */}
       </Routes>
     </Router>

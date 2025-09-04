@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   EnvelopeIcon,
   PhoneIcon,
@@ -21,6 +21,25 @@ const cardVariants = {
 };
 
 function Form() {
+  const [showPopup, setShowPopup] = useState(false);
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    const form = e.target;
+    const data = new FormData(form);
+
+    await fetch(form.action, {
+      method: form.method,
+      body: data,
+      headers: {
+        Accept: "application/json",
+      },
+    });
+
+    form.reset(); // clear form
+    setShowPopup(true); // show popup
+  };
   return (
     <section id="Contact" className="bg-[#f9fafb] py-2 text-[#59554d]">
       <div className="container mx-auto lg:px-8">
@@ -165,11 +184,23 @@ function Form() {
               <input type="hidden" name="_blacklist" value="spam, ads" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_cc" value="hazaelau@gmail.com" />
+              <input type="hidden" name="_bcc" value="hazaelau@gmail.com" />
+              <input type="hidden" name="_replyto" value="%email%" />
+              <input
+                type="hidden"
+                name="_subject"
+                value="New Contact Form Submission"
+              />
               <input
                 type="hidden"
                 name="_autoresponse"
-                value="Hello, Thank you for reaching. We’ve received your message and will get back to you as soon as possible."
+                value="Hello 👋, thank you for contacting us! We’ve received your message and will reply shortly."
               />
+              {/* <input
+                type="hidden"
+                name="_next"
+                value="https://yourdomain.com/thank-you"
+              /> */}
               <button
                 type="submit"
                 className="inline-block px-6 md:px-8 py-3 font-semibold text-white transition bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3]"
@@ -178,6 +209,22 @@ function Form() {
                 Send Message{" "}
               </button>{" "}
             </form>
+            {showPopup && (
+              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+                <div className="bg-white rounded-lg p-6 w-11/12 max-w-md mx-auto text-center">
+                  <h3 className="text-lg font-semibold mb-4">Thank You!</h3>
+                  <p className="text-sm text-gray-600">
+                    Your message has been sent successfully.
+                  </p>
+                  <button
+                    onClick={() => setShowPopup(false)}
+                    className="mt-4 inline-block px-4 py-2 bg-[#735c40] text-white rounded-md"
+                  >
+                    Close
+                  </button>
+                </div>
+              </div>
+            )}
           </motion.div>
         </div>
       </div>

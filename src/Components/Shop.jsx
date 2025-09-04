@@ -7,7 +7,7 @@ const products = [
   {
     title: "Single Portrait",
     price: "₦30,000",
-    image: "/IMG_1809.png",
+    image: "/IMG_1461.JPG",
     description: "A detailed pencil or charcoal portrait of one person.",
   },
   {

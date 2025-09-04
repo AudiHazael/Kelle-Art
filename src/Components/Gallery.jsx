@@ -17,7 +17,7 @@ const images = [
   { src: "/IMG_3960.JPG", alt: "Image " },
   { src: "/IMG_3961.JPG", alt: "Image " },
   { src: "/IMG_3962.JPG", alt: "Image " },
-  { src: "IMG_3963.JPG", alt: "Image " },
+
   // { src: "/", alt: "Image " },
   // { src: "/", alt: "Image " },
   // { src: "/", alt: "Image " },

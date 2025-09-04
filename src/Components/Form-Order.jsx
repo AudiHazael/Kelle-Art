@@ -115,6 +115,23 @@ function OrderPopup({
                 </select>
               </div>
 
+              {/* Style of Artwork */}
+              <div>
+                <label className="block text-sm font-medium mb-1">
+                  Style of Artwork
+                </label>
+                <select
+                  name="artwork-style"
+                  className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
+                  required
+                >
+                  <option value="">Select artwork style</option>
+                  <option value="Black & White">Black & White</option>
+                  <option value="Oil Painting">Oil Painting</option>
+                  <option value="Colored Pastel">Colored Pastel</option>
+                </select>
+              </div>
+
               {/* Preferred Size */}
               <div>
                 <label className="block text-sm font-medium mb-1">

@@ -80,7 +80,7 @@ export default function Services() {
                   <OrderPopup
                     triggerText={
                       <span className="flex items-center space-x-2 cursor-pointer transition-all hover:text-[#735c40]">
-                        <span>Commission Your Artwork</span>
+                        <span>Place an Order</span>
                         <ArrowLongRightIcon className="h-5 w-5" />
                       </span>
                     }

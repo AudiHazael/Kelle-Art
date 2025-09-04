@@ -22,31 +22,46 @@ const cardVariants = {
 
 function Form() {
   const [showPopup, setShowPopup] = useState(false);
+  const [error, setError] = useState(null);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
 
     const form = e.target;
     const data = new FormData(form);
 
-    await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    });
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    form.reset(); // clear form
-    setShowPopup(true); // show popup
+      if (response.ok) {
+        form.reset();
+        setShowPopup(true);
+      } else {
+        throw new Error("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
+
   return (
     <section id="Contact" className="bg-[#f9fafb] py-2 text-[#59554d]">
       <div className="container mx-auto lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center-safe">
           {/* Left Column - Cards */}
           <div className="space-y-4">
-            {/* Card 1 */}
+            {/* Email */}
             <motion.div
               custom={0}
               initial="hidden"
@@ -62,7 +77,7 @@ function Form() {
               </div>
             </motion.div>
 
-            {/* Card 2 */}
+            {/* Phone */}
             <motion.div
               custom={1}
               initial="hidden"
@@ -80,7 +95,7 @@ function Form() {
               </div>
             </motion.div>
 
-            {/* Card 3 */}
+            {/* Location */}
             <motion.div
               custom={2}
               initial="hidden"
@@ -114,7 +129,7 @@ function Form() {
             </motion.div>
           </div>
 
-          {/* Right Column - Form */}
+          {/* Right Column - Contact Form */}
           <motion.div
             initial={{ opacity: 0, x: 60 }}
             whileInView={{ opacity: 1, x: 0 }}
@@ -133,6 +148,7 @@ function Form() {
               method="POST"
               className="space-y-6"
             >
+              {/* Name */}
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>
                 <input
@@ -143,6 +159,8 @@ function Form() {
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
                 />
               </div>
+
+              {/* Email */}
               <div>
                 <label className="block text-sm font-medium mb-1">Email</label>
                 <input
@@ -153,6 +171,8 @@ function Form() {
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
                 />
               </div>
+
+              {/* Subject */}
               <div>
                 <label className="block text-sm font-medium mb-1">
                   Subject
@@ -169,6 +189,8 @@ function Form() {
                   <option value="feedback">Feedback</option>
                 </select>
               </div>
+
+              {/* Message */}
               <div>
                 <label className="block text-sm font-medium mb-1">
                   Message
@@ -181,7 +203,8 @@ function Form() {
                   className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
                 ></textarea>
               </div>
-              {/* Hidden Fields */}
+
+              {/* Hidden Fields for FormSubmit */}
               <input type="hidden" name="_blacklist" value="spam, ads" />
               <input type="hidden" name="_captcha" value="false" />
               <input type="hidden" name="_cc" value="hazaelau@gmail.com" />
@@ -197,18 +220,27 @@ function Form() {
                 name="_autoresponse"
                 value="Hello 👋, thank you for contacting us! We’ve received your message and will reply shortly."
               />
-              {/* <input
-                type="hidden"
-                name="_next"
-                value="https://yourdomain.com/thank-you"
-              /> */}
+
+              {/* Error message */}
+              {error && (
+                <p className="text-red-600 text-sm font-medium">{error}</p>
+              )}
+
+              {/* Submit button */}
               <button
                 type="submit"
-                className="inline-block px-6 md:px-8 py-3 font-semibold text-white transition bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3]"
+                disabled={loading}
+                className={`inline-block px-6 md:px-8 py-3 font-semibold text-white rounded-md transition ${
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-[#735c40] hover:text-[#402421] hover:bg-[#e6d8c3]"
+                }`}
               >
-                Send Message
+                {loading ? "Sending..." : "Send Message"}
               </button>
             </form>
+
+            {/* Success Popup */}
             {showPopup && (
               <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
                 <div className="bg-white rounded-lg p-6 w-11/12 max-w-md mx-auto text-center">

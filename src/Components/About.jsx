@@ -22,7 +22,7 @@ export default function About() {
   return (
     <div className="bg-[#f5f5f0] space-y-12" id="About">
       {/* --- First Section --- */}
-      <section className="max-w-7xl mx-auto pt-16 space-y-6 text-[#59554d]">
+      <section className="max-w-7xl mx-auto px-6 pt-16 space-y-6 text-[#59554d]">
         <motion.div
           className="grid grid-cols-1 md:grid-cols-12 items-center gap-4 md:border md:border-white/10 rounded-md"
           variants={containerVariants}

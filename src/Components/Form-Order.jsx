@@ -6,25 +6,39 @@ function OrderPopup({
   description = "Fill out the form below to place your order or request a custom commission.",
 }) {
   const [isOpen, setIsOpen] = useState(false);
-
   const [showPopup, setShowPopup] = useState(false);
+  const [loading, setLoading] = useState(false);
+  const [error, setError] = useState(null);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setError(null);
 
     const form = e.target;
     const data = new FormData(form);
 
-    await fetch(form.action, {
-      method: form.method,
-      body: data,
-      headers: {
-        Accept: "application/json",
-      },
-    });
+    try {
+      const response = await fetch(form.action, {
+        method: form.method,
+        body: data,
+        headers: {
+          Accept: "application/json",
+        },
+      });
 
-    form.reset(); // clear form
-    setShowPopup(true); // show popup
+      if (response.ok) {
+        form.reset();
+        setShowPopup(true);
+        setIsOpen(false); // close the form modal
+      } else {
+        throw new Error("Something went wrong. Please try again.");
+      }
+    } catch (err) {
+      setError(err.message);
+    } finally {
+      setLoading(false);
+    }
   };
 
   return (
@@ -39,9 +53,9 @@ function OrderPopup({
 
       {/* Modal */}
       {isOpen && (
-        <div className="fixed inset-0 bg-black/75 backdrop-blur-[2px] bg-opacity-50 flex items-center justify-center z-50">
+        <div className="fixed inset-0 bg-black/75 backdrop-blur-[2px] flex items-center justify-center z-50">
           <div className="bg-[#f5f5f0] m-6 text-[#59554d] md:shadow-2xl w-full max-w-lg rounded-lg shadow-lg p-6 relative">
-            {/* Close */}
+            {/* Close Button */}
             <button
               onClick={() => setIsOpen(false)}
               className="absolute top-3 right-3 text-[#b18e63] hover:text-gray-800"
@@ -60,6 +74,7 @@ function OrderPopup({
               method="POST"
               className="space-y-4"
             >
+              {/* Name */}
               <div>
                 <label className="block text-sm font-medium mb-1">Name</label>
                 <input
@@ -71,6 +86,7 @@ function OrderPopup({
                 />
               </div>
 
+              {/* Email */}
               <div>
                 <label className="block text-sm font-medium mb-1">Email</label>
                 <input
@@ -82,6 +98,7 @@ function OrderPopup({
                 />
               </div>
 
+              {/* Type of Artwork */}
               <div>
                 <label className="block text-sm font-medium mb-1">
                   Type of Artwork
@@ -98,6 +115,7 @@ function OrderPopup({
                 </select>
               </div>
 
+              {/* Preferred Size */}
               <div>
                 <label className="block text-sm font-medium mb-1">
                   Preferred Size
@@ -110,9 +128,10 @@ function OrderPopup({
                 />
               </div>
 
+              {/* Reference Image */}
               <div>
                 <label className="block text-sm font-medium mb-1">
-                  Reference Image (For custom art and commisions)
+                  Reference Image (For custom art and commissions)
                 </label>
                 <input
                   type="file"
@@ -122,6 +141,7 @@ function OrderPopup({
                 />
               </div>
 
+              {/* Additional Details */}
               <div>
                 <label className="block text-sm font-medium mb-1">
                   Additional Details
@@ -141,32 +161,45 @@ function OrderPopup({
               <input
                 type="hidden"
                 name="_autoresponse"
-                value="Hello, Thank you for reaching. We’ve received your order. Wewill get back to you as soon as possible."
+                value="Hello 👋, thank you for your order! We’ve received it and will get back to you shortly."
               />
 
+              {/* Error Message */}
+              {error && (
+                <p className="text-red-600 text-sm font-medium">{error}</p>
+              )}
+
+              {/* Submit Button */}
               <button
                 type="submit"
-                className="w-full py-3 bg-[#735c40] text-white font-semibold rounded-md hover:bg-[#402421] transition"
+                disabled={loading}
+                className={`w-full py-3 font-semibold rounded-md transition ${
+                  loading
+                    ? "bg-gray-400 cursor-not-allowed"
+                    : "bg-[#735c40] text-white hover:bg-[#402421]"
+                }`}
               >
-                Submit
+                {loading ? "Submitting..." : "Submit"}
               </button>
             </form>
-            {showPopup && (
-              <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
-                <div className="bg-white rounded-lg p-6 w-11/12 max-w-md mx-auto text-center">
-                  <h3 className="text-lg font-semibold mb-4">Thank You!</h3>
-                  <p className="text-sm text-gray-600">
-                    Your message has been sent successfully.
-                  </p>
-                  <button
-                    onClick={() => setShowPopup(false)}
-                    className="mt-4 inline-block px-4 py-2 bg-[#735c40] text-white rounded-md"
-                  >
-                    Close
-                  </button>
-                </div>
-              </div>
-            )}
+          </div>
+        </div>
+      )}
+
+      {/* Success Popup */}
+      {showPopup && (
+        <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center z-50">
+          <div className="bg-white rounded-lg p-6 w-11/12 max-w-md mx-auto text-center">
+            <h3 className="text-lg font-semibold mb-4">Thank You!</h3>
+            <p className="text-sm text-gray-600">
+              Your order has been submitted successfully.
+            </p>
+            <button
+              onClick={() => setShowPopup(false)}
+              className="mt-4 inline-block px-4 py-2 bg-[#735c40] text-white rounded-md"
+            >
+              Close
+            </button>
           </div>
         </div>
       )}

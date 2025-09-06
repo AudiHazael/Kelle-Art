@@ -46,30 +46,37 @@ const Nav = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6 text-[#e6d8c3] font-medium">
-              {["Home", "About", "Services", "Shop", "Gallery", "Contact"].map(
-                (item, index) => (
-                  <motion.li
-                    key={item}
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
+              {[
+                "Home",
+                "About",
+                "Commission",
+                "Shop",
+                "Gallery",
+                "Contact",
+              ].map((item, index) => (
+                <motion.li
+                  key={item}
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Link
+                    to={
+                      item === "Home"
+                        ? "/"
+                        : item === "Gallery"
+                        ? "/gallery"
+                        : item === "Contact"
+                        ? "/contact-page"
+                        : item === "Commission"
+                        ? "/services"
+                        : `/${item.toLowerCase()}`
+                    }
+                    className="hover:text-[#735c40] border-[#e6d8c3]"
                   >
-                    <Link
-                      to={
-                        item === "Home"
-                          ? "/"
-                          : item === "Gallery"
-                          ? "/Gallery"
-                          : item === "Contact"
-                          ? "/Contact-Page"
-                          : `/${item.toLowerCase()}`
-                      }
-                      className="hover:text-[#735c40] border-[#e6d8c3]"
-                    >
-                      {item}
-                    </Link>
-                  </motion.li>
-                )
-              )}
+                    {item}
+                  </Link>
+                </motion.li>
+              ))}
             </ul>
           </nav>
         </div>
@@ -88,7 +95,7 @@ const Nav = () => {
                 {[
                   "Home",
                   "About",
-                  "Services",
+                  "Commission",
                   "Shop",
                   "Gallery",
                   "Contact",
@@ -103,9 +110,11 @@ const Nav = () => {
                         item === "Home"
                           ? "/"
                           : item === "Gallery"
-                          ? "/Gallery"
+                          ? "/gallery"
                           : item === "Contact"
-                          ? "/Contact-Page"
+                          ? "/contact-page"
+                          : item === "Commission"
+                          ? "/services"
                           : `/${item.toLowerCase()}`
                       }
                       className="hover:text-[#735c40] border-[#e6d8c3]"

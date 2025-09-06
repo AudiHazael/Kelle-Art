@@ -2,18 +2,20 @@ import React from "react";
 import { motion } from "framer-motion";
 
 const images = [
-  "/IMG_1818.png",
   "/IMG_1474.png",
   "/IMG_2076.JPG",
-  "/IMG_1474.png",
   "/IMG_2088.png",
+  "/IMG_3962.JPG",
   "/couple.png",
   "/IMG_3957.JPG",
   "/IMG_3959.JPG",
   "/IMG_3960.JPG",
   "/IMG_3961.JPG",
-  "/IMG_3962.JPG",
-  "/IMG_3963.JPG",
+  "/IMG_1818.png",
+  "/IMG_2920.jpg",
+  "/IMG_1809.png",
+  "/IMG_1458.JPG",
+  "/IMG_1460.JPG",
 ];
 
 function Arts() {

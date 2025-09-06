@@ -1,5 +1,6 @@
 import React from "react";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 const fadeInUp = {
   hidden: { opacity: 0, y: 40 },
@@ -58,18 +59,21 @@ function Hero() {
           custom={1.4}
           variants={fadeInUp}
         >
-          <a
-            href="#commission"
+          {/* Commission CTA → goes to /services */}
+          <Link
+            to="/services"
             className="inline-block px-6 sm:px-8 py-3 font-semibold text-[#e6d8c3] bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3] transition"
           >
             Commission Artwork
-          </a>
-          <a
-            href="#portfolio"
+          </Link>
+
+          {/* Gallery CTA → goes to /gallery */}
+          <Link
+            to="/gallery"
             className="inline-block px-6 sm:px-8 py-3 font-semibold text-[#e6d8c3] border-2 border-[#735c40] rounded-md hover:bg-[#e6d8c3] hover:text-[#402421] transition"
           >
             Explore Portfolio
-          </a>
+          </Link>
         </motion.div>
       </motion.div>
     </section>

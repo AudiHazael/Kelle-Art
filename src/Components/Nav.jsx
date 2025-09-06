@@ -46,64 +46,12 @@ const Nav = () => {
           {/* Desktop Navigation */}
           <nav className="hidden md:block">
             <ul className="flex space-x-6 text-[#e6d8c3] font-medium">
-              {[
-                "Home",
-                "About",
-                "Commission",
-                "Shop",
-                "Gallery",
-                "Contact",
-              ].map((item, index) => (
-                <motion.li
-                  key={item}
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Link
-                    to={
-                      item === "Home"
-                        ? "/"
-                        : item === "Gallery"
-                        ? "/gallery"
-                        : item === "Contact"
-                        ? "/contact-page"
-                        : item === "Commission"
-                        ? "/services"
-                        : `/${item.toLowerCase()}`
-                    }
-                    className="hover:text-[#735c40] border-[#e6d8c3]"
-                  >
-                    {item}
-                  </Link>
-                </motion.li>
-              ))}
-            </ul>
-          </nav>
-        </div>
-
-        {/* Mobile Navigation */}
-        <AnimatePresence>
-          {isOpen && (
-            <motion.nav
-              initial={{ opacity: 0, y: -20 }}
-              animate={{ opacity: 1, y: 0 }}
-              exit={{ opacity: 0, y: -20 }}
-              transition={{ duration: 0.75 }}
-              className="md:hidden bg-inherit shadow-xl rounded-md p-4"
-            >
-              <ul className="flex flex-col space-y-4 text-[#e6d8c3] font-medium">
-                {[
-                  "Home",
-                  "About",
-                  "Commission",
-                  "Shop",
-                  "Gallery",
-                  "Contact",
-                ].map((item) => (
+              {["Home", "About", "Commission", "Gallery", "Contact"].map(
+                (item, index) => (
                   <motion.li
                     key={item}
-                    whileHover={{ x: 5 }}
-                    transition={{ type: "spring", stiffness: 200 }}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
                   >
                     <Link
                       to={
@@ -122,7 +70,49 @@ const Nav = () => {
                       {item}
                     </Link>
                   </motion.li>
-                ))}
+                )
+              )}
+            </ul>
+          </nav>
+        </div>
+
+        {/* Mobile Navigation */}
+        <AnimatePresence>
+          {isOpen && (
+            <motion.nav
+              initial={{ opacity: 0, y: -20 }}
+              animate={{ opacity: 1, y: 0 }}
+              exit={{ opacity: 0, y: -20 }}
+              transition={{ duration: 0.75 }}
+              className="md:hidden bg-inherit shadow-xl rounded-md p-4"
+            >
+              <ul className="flex flex-col space-y-4 text-[#e6d8c3] font-medium">
+                {["Home", "About", "Commission", "Gallery", "Contact"].map(
+                  (item) => (
+                    <motion.li
+                      key={item}
+                      whileHover={{ x: 5 }}
+                      transition={{ type: "spring", stiffness: 200 }}
+                    >
+                      <Link
+                        to={
+                          item === "Home"
+                            ? "/"
+                            : item === "Gallery"
+                            ? "/gallery"
+                            : item === "Contact"
+                            ? "/contact-page"
+                            : item === "Commission"
+                            ? "/services"
+                            : `/${item.toLowerCase()}`
+                        }
+                        className="hover:text-[#735c40] border-[#e6d8c3]"
+                      >
+                        {item}
+                      </Link>
+                    </motion.li>
+                  )
+                )}
               </ul>
             </motion.nav>
           )}

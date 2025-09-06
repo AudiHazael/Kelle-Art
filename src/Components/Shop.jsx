@@ -18,9 +18,9 @@ const products = [
     description: "Celebrate love with a hand-drawn portrait of two people.",
   },
   {
-    title: "Abstract Drawing",
+    title: "Family Drawing",
     price: "₦80,000",
-    image: "/abstract.jpg",
+    image: "/IMG_3961.JPG",
     description: "A timeless family keepsake, perfect for your living room.",
     accredit:
       '<a href="https://www.freepik.com/free-ai-image/abstract-dadaism-concept_383251065.htm">Image by freepik</a>',
@@ -46,7 +46,7 @@ export default function Shop() {
         transition={{ duration: 0.6, ease: "easeOut" }}
         viewport={{ once: false, amount: 0.4 }}
       >
-        <h2 className="text-2xl font-bold">Shop Artwork</h2>
+        <h2 className="text-2xl font-bold">Artwork</h2>
         <p className="text-md md:text-lg py-4">
           Explore our collection of unique artworks and find the perfect piece
           for your space.

@@ -16,8 +16,8 @@ function Home() {
       <Hero />
       <About />
       <Services />
-      <Shop />
       <Art />
+      <Shop />
       <Contact />
       <Footer />
       <FloatingWhatsapp

@@ -5,9 +5,9 @@ import Home from "./Pages/Home";
 import ContactPage from "./Pages/Contact-Page";
 import AboutPage from "./Pages/About-Page";
 import ServicePage from "./Pages/Service-Page";
-import ShopPage from "./Pages/Shop-Page";
 import Gallery from "./Pages/Gallery";
 
+// import ShopPage from "./Pages/Shop-Page";
 // import Error from "./Pages/Error";
 
 import AOS from "aos";
@@ -25,9 +25,9 @@ function App() {
         <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
-        <Route path="/shop" element={<ShopPage />} />
-        <Route path="/gallery" element={<Gallery />} />
 
+        <Route path="/gallery" element={<Gallery />} />
+        {/* <Route path="/shop" element={<ShopPage />} /> */}
         {/* <Route path="*" element={<Error />} /> */}
       </Routes>
     </Router>

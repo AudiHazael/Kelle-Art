@@ -14,7 +14,7 @@ function ServicePage() {
       {/* Hero Section */}
       <section className="about-hero bg-[#f5f5f0] py-16 px-4 sm:px-6 lg:px-8">
         <div className="mx-auto text-[#59554d]">
-          <h1 className="text-4xl font-extrabold">Our Services</h1>
+          <h1 className="text-4xl font-extrabold">Commission an Art</h1>
           <p className="text-base lg:text-md font-normal mt-2 leading-relaxed">
             We offer a wide range of services to cater to your artistic needs.
           </p>

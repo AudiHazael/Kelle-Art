@@ -42,29 +42,35 @@ function Footer() {
           <a className="link link-hover">Shop</a>
         </nav>
         <nav>
-          <div className="flex space-x-4 my-4" variants={fadeInUp}>
+          {/* Social Links - Dark Background Style */}
+          <motion.div className="flex space-x-4" variants={fadeInUp}>
             <a
               href="https://www.facebook.com/share/1GqLJSYEur/?mibextid=wwXIfr"
               target="_blank"
               rel="noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-[#1877F2]/20 transition-all duration-300"
             >
-              <FaFacebookF className="h-5 w-5" style={{ color: "#1877F2" }} />
+              <FaFacebookF className="h-5 w-5 text-[#1877F2] hover:scale-110 transition-transform duration-300" />
             </a>
+
             <a
               href="https://www.instagram.com/artist_kelle?igsh=MWwzNDhxd3VweWVicw%3D%3D&utm_source=qr"
               target="_blank"
               rel="noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-[#E4405F]/20 transition-all duration-300"
             >
-              <FaInstagram className="h-5 w-5" style={{ color: "#E4405F" }} />
+              <FaInstagram className="h-5 w-5 text-[#E4405F] hover:scale-110 transition-transform duration-300" />
             </a>
+
             <a
               href="https://www.tiktok.com/@theartistkelle?_t=ZN-8zQgMfEQpK2&_r=1"
               target="_blank"
               rel="noreferrer"
+              className="flex items-center justify-center w-10 h-10 rounded-full bg-white/10 hover:bg-white/20 transition-all duration-300"
             >
-              <FaTiktok className="h-5 w-5" style={{ color: "#f1f1f1" }} />
+              <FaTiktok className="h-5 w-5 text-white hover:scale-110 transition-transform duration-300" />
             </a>
-          </div>
+          </motion.div>
         </nav>
         <aside>
           <p>

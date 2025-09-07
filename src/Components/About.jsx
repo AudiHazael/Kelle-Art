@@ -72,28 +72,27 @@ export default function About() {
                   href="https://www.facebook.com/share/1GqLJSYEur/?mibextid=wwXIfr"
                   target="_blank"
                   rel="noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-[#1877F2]/10 hover:bg-[#1877F2] transition-all duration-300 group"
                 >
-                  <FaFacebookF
-                    className="h-7 w-7"
-                    style={{ color: "#1877F2" }}
-                  />
+                  <FaFacebookF className="h-5 w-5 text-[#1877F2] group-hover:text-white transition-all duration-300" />
                 </a>
+
                 <a
                   href="https://www.instagram.com/artist_kelle?igsh=MWwzNDhxd3VweWVicw%3D%3D&utm_source=qr"
                   target="_blank"
                   rel="noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-[#E4405F]/10 hover:bg-[#E4405F] transition-all duration-300 group"
                 >
-                  <FaInstagram
-                    className="h-7 w-7"
-                    style={{ color: "#E4405F" }}
-                  />
+                  <FaInstagram className="h-5 w-5 text-[#E4405F] group-hover:text-white transition-all duration-300" />
                 </a>
+
                 <a
                   href="https://www.tiktok.com/@theartistkelle?_t=ZN-8zQgMfEQpK2&_r=1"
                   target="_blank"
                   rel="noreferrer"
+                  className="flex items-center justify-center w-10 h-10 rounded-full bg-black/10 hover:bg-black transition-all duration-300 group"
                 >
-                  <FaTiktok className="h-7 w-7" style={{ color: "#000000" }} />
+                  <FaTiktok className="h-5 w-5 text-black group-hover:text-white transition-all duration-300" />
                 </a>
               </motion.div>
             </motion.div>

@@ -54,15 +54,16 @@ export default function About() {
               <h2 className="text-lg md:text-xl font-bold">I am Isaac Ekele</h2>
 
               <p className="text-base lg:text-md font-normal mt-2 leading-relaxed">
-                Artist Kelle (Isaac Ekele) is a Nigerian pencil and digital
-                artist whose hyper-realistic portraits have captured the
-                attention of clients around the world. <br /> Based in Abuja,
-                Nigeria, Kelle has been refining his craft for more than 15
-                years, specializing in detailed graphite drawings and memorial
-                artworks that preserve cherished memories in timeless form.{" "}
-                <br /> His portfolio includes everything from intimate family
-                portraits to large-scale collages and commemorative works, often
-                blending emotional storytelling with technical mastery.
+                Known professionally as{" "}
+                <span className="font-semibold">Artist Kelle</span>, I am a
+                Nigerian pencil and digital artist whose hyper-realistic
+                portraits have reached clients worldwide. <br /> Based in Abuja,
+                Nigeria, I have been refining my craft for over 15 years,
+                specializing in detailed graphite drawings and memorial artworks
+                that preserve cherished memories in timeless form. <br />
+                My portfolio ranges from intimate family portraits to
+                large-scale collages and commemorative pieces—each one blending
+                emotional storytelling with technical mastery.
               </p>
 
               {/* Social Links */}
@@ -73,7 +74,7 @@ export default function About() {
                   rel="noreferrer"
                 >
                   <FaFacebookF
-                    className="h-5 w-5"
+                    className="h-7 w-7"
                     style={{ color: "#1877F2" }}
                   />
                 </a>
@@ -83,7 +84,7 @@ export default function About() {
                   rel="noreferrer"
                 >
                   <FaInstagram
-                    className="h-5 w-5"
+                    className="h-7 w-7"
                     style={{ color: "#E4405F" }}
                   />
                 </a>
@@ -92,7 +93,7 @@ export default function About() {
                   target="_blank"
                   rel="noreferrer"
                 >
-                  <FaTiktok className="h-5 w-5" style={{ color: "#000000" }} />
+                  <FaTiktok className="h-7 w-7" style={{ color: "#000000" }} />
                 </a>
               </motion.div>
             </motion.div>
@@ -117,20 +118,19 @@ export default function About() {
             >
               <h2 className="text-lg md:text-xl font-bold mb-4">What I Do</h2>
               <p className="text-base lg:text-md font-normal leading-relaxed">
-                Kelle’s work is defined by his meticulous attention to detail,
-                precision shading, and ability to capture likeness with depth
-                and emotion. His pieces are often more than drawings, they are
-                legacies. Many clients commission him for memorial portraits of
-                lost loved ones, generational family pieces, or milestone
-                celebrations. Whether through a single subject or multi-layered
-                composition, Kelle’s portraits embody love, remembrance, and
-                heritage.
+                My work is defined by meticulous attention to detail, precision
+                shading, and the ability to capture likeness with depth and
+                emotion. Each portrait is more than a drawing—it is a legacy.
+                Clients often commission me for memorial portraits of loved
+                ones, generational family pieces, or milestone celebrations.
+                Whether through a single subject or a multi-layered composition,
+                my art embodies love, remembrance, and heritage.
                 <br />
                 <br />
-                Though rooted in Nigeria, Kelle’s art has traveled far. His
-                clientele spans across the United States, the UK, and beyond. He
-                ships worldwide, with each piece carefully packaged to ensure
-                safe delivery.
+                Though rooted in Nigeria, my work has reached clients across the
+                United States, the UK, and beyond. I ship worldwide, with every
+                piece carefully packaged to ensure it arrives safely and ready
+                to be cherished for years to come.
               </p>
             </motion.div>
 

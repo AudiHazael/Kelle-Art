@@ -20,7 +20,7 @@ const fadeInUp = {
 
 export default function About() {
   return (
-    <div className="bg-[#f5f5f0] space-y-12" id="About">
+    <div className="bg-[#f5f5f0] space-y-12">
       {/* --- First Section --- */}
       <section className="px-6 md:px-12 lg:px-20 pt-16 text-[#59554d]">
         <div className="max-w-screen-xl mx-auto">

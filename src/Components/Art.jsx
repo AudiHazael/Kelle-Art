@@ -20,10 +20,7 @@ const images = [
 
 function Arts() {
   return (
-    <section
-      id="gallery-two"
-      className="bg-[#fdfcf9] py-16 px-4 sm:px-6 lg:px-12"
-    >
+    <section className="bg-[#fdfcf9] py-16 px-4 sm:px-6 lg:px-12">
       <div className="mx-auto">
         {/* Heading */}
         <motion.div

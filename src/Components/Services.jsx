@@ -44,10 +44,7 @@ const cardVariants = {
 
 export default function Services() {
   return (
-    <section
-      className="mx-auto bg-white/95 text-[#59554d] py-16 px-4 sm:px-6 lg:px-16"
-      id="Services"
-    >
+    <section className="mx-auto bg-white/95 text-[#59554d] py-16 px-4 sm:px-6 lg:px-16">
       <motion.div
         className="md:py-16 md:px-16 rounded-md grid md:grid-cols-2 lg:grid-cols-2 gap-8"
         variants={containerVariants}

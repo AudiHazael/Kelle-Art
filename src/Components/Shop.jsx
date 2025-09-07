@@ -35,10 +35,7 @@ const products = [
 
 export default function Shop() {
   return (
-    <section
-      className="mx-auto bg-[#f5f5f0] text-[#59554d] py-16 px-6 lg:px-24"
-      id="Shop"
-    >
+    <section className="mx-auto bg-[#f5f5f0] text-[#59554d] py-16 px-6 lg:px-24">
       <motion.div
         className="max-w-7xl mb-12"
         initial={{ opacity: 0, y: 30 }}

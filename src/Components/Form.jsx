@@ -56,7 +56,7 @@ function Form() {
   };
 
   return (
-    <section id="Contact" className="bg-[#f9fafb] py-2 text-[#59554d]">
+    <section id="Contact" className="bg-[#f9fafb] py-8 px-2 text-[#59554d]">
       <div className="container mx-auto lg:px-8">
         <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center-safe">
           {/* Left Column - Cards */}

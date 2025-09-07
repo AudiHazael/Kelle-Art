@@ -73,7 +73,7 @@ export default function Commission() {
               ))}
             </div>
           </div>
-          <div className="md:col-span-6 px-4 bg-white/10 rounded-md flex flex-col justify-center items-start">
+          <div className="md:col-span-6 px-4 py-12 bg-white/10 rounded-md flex flex-col justify-center items-start">
             <ul className="list-disc list-outside p-6 space-y-3 text-[#59554d] text-base lg:text-md font-normal mt-2 leading-relaxed">
               <li>
                 Created with the highest quality materials, designed to last a

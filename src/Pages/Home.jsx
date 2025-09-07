@@ -3,7 +3,7 @@ import Nav from "../Components/Nav";
 import Hero from "../Components/Hero";
 import About from "../Components/About";
 import Services from "../Components/Services";
-import Shop from "../Components/Shop";
+// import Shop from "../Components/Shop";
 import Art from "../Components/Art";
 import Contact from "../Components/Contact";
 import Footer from "../Components/Footer";
@@ -17,7 +17,7 @@ function Home() {
       <About />
       <Services />
       <Art />
-      <Shop />
+      {/* <Shop /> */}
       <Contact />
       <Footer />
       <FloatingWhatsapp

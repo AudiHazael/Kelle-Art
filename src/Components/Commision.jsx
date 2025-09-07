@@ -1,26 +1,40 @@
 import React from "react";
 import CommItem from "./CommItem";
 
+import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import OrderPopup from "../Components/Form-Order";
 const faqs = [
   {
     question: "Prizes",
     answer:
-      "Commissioned portraits are available from €900 and up. To maintain the quality and time each piece requires, inquiries below this amount cannot be considered.",
+      "Commissioned portraits are available from $300 and up. To maintain the quality and time each piece requires, inquiries below this amount cannot be considered.",
   },
   {
     question: "Sizes",
-    answer:
-      "Select the size that fits your space and vision: A3 (29.7 x 42 cm), A2 (42 x 59.4 cm), A1 (59.4 x 84.1 cm), A0 (84.1 x 118.9 cm). For custom size, note that in the form.",
+    answer: [
+      "A3 (29.7 x 42 cm)",
+      "A2 (42 x 59.4 cm)",
+      "A1 (59.4 x 84.1 cm)",
+      "A0 (84.1 x 118.9 cm)",
+      "For custom size, note that in the form.",
+    ],
   },
   {
     question: "Delivery",
-    answer:
-      "Your portrait ships securely with DHL Express worldwide:\n\n USA & Canada: 2–4 days\n       UK: 1–2 days\n       Europe: 1–3 days\n       Rest of world: 2–7 days\n       Tracked & insured\n      Signature required\n      Includes a Certificate of Authenticity & aftercare guide\n\n      Note: Artworks ship rolled in a tube to ensure they arrive in perfect condition.",
+    answer: [
+      "Your portrait ships securely with DHL Express worldwide within 5–7 working days",
+      "Tracked & insured",
+      "Signature required",
+      "Includes a Certificate of Authenticity & aftercare guide",
+      "Note: Artworks ship rolled in a tube to ensure they arrive in perfect condition.",
+    ],
   },
   {
     question: "Payment",
-    answer:
-      "Once I confirm your order: \n A deposit is required to start your commission (50% of total amount)\n\n      Secure payment options: Card, Bank Transfer, iDEAL, Bancontact, Apple Pay.",
+    answer: [
+      "Once I confirm your order: a deposit is required to start your commission (50% of total amount).",
+      "Secure payment options: Worldremit, Western Union, MoneyGram, Card Payment, Bank Transfer.",
+    ],
   },
   {
     question: "Framing",
@@ -34,8 +48,13 @@ const faqs = [
   },
   {
     question: "Photo Requirements",
-    answer:
-      "A clear, high-quality photo is required to create your portrait.\n\n    Head & shoulder portraits\n\n    Pet portraits\n\n    Memorial and composite drawings\n\n    Want to combine photos or change the background? I’ll create a custom mock-up so you can visualise the final piece before we begin.",
+    answer: [
+      "A clear, high-quality photo is required to create your portrait.",
+      "Head & shoulder portraits",
+      "Pet portraits",
+      "Memorial and composite drawings",
+      "Want to combine photos or change the background? I’ll create a custom mock-up so you can visualise the final piece before we begin.",
+    ],
   },
 ];
 
@@ -54,8 +73,8 @@ export default function Commission() {
               ))}
             </div>
           </div>
-          <div className="md:col-span-6 bg-white/10 rounded-md flex justify-center items-center">
-            <ul className="list-disc list-inside p-6 space-y-3 text-[#59554d] text-base lg:text-md font-normal mt-2 leading-relaxed">
+          <div className="md:col-span-6 px-4 bg-white/10 rounded-md flex flex-col justify-center items-start">
+            <ul className="list-disc list-outside p-6 space-y-3 text-[#59554d] text-base lg:text-md font-normal mt-2 leading-relaxed">
               <li>
                 Created with the highest quality materials, designed to last a
                 lifetime.
@@ -68,6 +87,18 @@ export default function Commission() {
               <li>Worldwide shipping available.</li>
               <li>✓ 100% satisfaction guaranteed.</li>
             </ul>
+            <div className="inline-block px-6 sm:px-8   text-[#e6d8c3] bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3] transition mt-6 items-center gap-2 text-sm  font-medium">
+              <OrderPopup
+                triggerText={
+                  <span className="flex items-center space-x-2 cursor-pointer transition-all text-lg hover:text-[#735c40]">
+                    <span>Place an Order</span>
+                    <ArrowLongRightIcon className="h-5 w-5" />
+                  </span>
+                }
+                title="Commission Request"
+                description="Fill out the form below to commission your custom artwork."
+              />
+            </div>
           </div>
         </div>
       </section>

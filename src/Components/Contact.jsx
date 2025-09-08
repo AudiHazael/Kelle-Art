@@ -4,10 +4,10 @@ import Form from "./Form";
 
 function Contact() {
   return (
-    <section className="bg-[#f9fafb] py-4 text-[#59554d]">
+    <section className="bg-[#f9fafb] py-12 text-[#59554d]">
       <div className="max-w-7xl mx-auto px-6 md:px-4 lg:px-8">
         {/* Section Heading */}
-        <div className="mb-12">
+        <div className="mb-2">
           <motion.div
             initial={{ opacity: 0, y: 30 }}
             whileInView={{ opacity: 1, y: 0 }}

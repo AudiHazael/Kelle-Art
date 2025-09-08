@@ -1,35 +1,34 @@
 import React from "react";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
-import OrderPopup from "./Form-Order";
+import OrderPopupTwo from "./FormOrderTwo";
 
 const products = [
   {
-    title: "Single Portrait",
-    price: "₦30,000",
-    image: "/IMG_1461.JPG",
-    description:
-      "A detailed realistic pencil or charcoal portrait of one person.",
+    title: "Breaking Loose",
+    price: "$4500",
+    image: "/Breaking Loose.png",
+    description: "",
   },
   {
-    title: "Couple Portrait",
-    price: "₦50,000",
-    image: "/couple.png",
-    description: "Celebrate love with a hand-drawn portrait of two people.",
+    title: "Purple",
+    price: "$3000",
+    image: "/Purple.png",
+    description: "",
   },
   {
-    title: "Family Drawing",
-    price: "₦80,000",
-    image: "/IMG_3961.JPG",
-    description: "A timeless family keepsake, perfect for your living room.",
-    accredit:
-      '<a href="https://www.freepik.com/free-ai-image/abstract-dadaism-concept_383251065.htm">Image by freepik</a>',
+    title: "Ganja Mama",
+    price: "$3000",
+    image: "/Ganja-Mama.png",
+    description: "",
+    accredit: "",
   },
   {
-    title: "Custom Art",
-    price: "Contact for Price",
-    image: "/IMG_2920.PNG",
-    description: "Unique commissions tailored to your vision and story.",
+    title: "Joker",
+    price: "$2000",
+    image: "/Joker.png",
+    description: "",
+    accredit: "",
   },
 ];
 
@@ -37,7 +36,7 @@ export default function Shop() {
   return (
     <section className="mx-auto bg-[#f5f5f0] text-[#59554d] py-16 px-6 lg:px-24">
       <motion.div
-        className="max-w-7xl mb-12"
+        className="max-w-7xl mb-4"
         initial={{ opacity: 0, y: 30 }}
         whileInView={{ opacity: 1, y: 0 }}
         transition={{ duration: 0.6, ease: "easeOut" }}
@@ -58,34 +57,36 @@ export default function Shop() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ amount: 0.5 }} // 👈 will replay every time you scroll away & back
-            className="bg-white w-full h-fit shadow-md rounded-md overflow-hidden flex flex-col"
+            className="bg-white shadow-md backdrop-blur w-full h-fit rounded-md overflow-hidden flex flex-col"
           >
             <img
               src={item.image}
               alt={item.title}
               content={item.accredit}
-              className="h-78 w-full object-cover rounded-t-md"
+              className="h-[400px] w-full object-cover rounded-t-md"
               loading="lazy"
             />
             <div className="p-4 text-left flex flex-col justify-between flex-grow">
               <div>
-                <h3 className="text-md font-semibold text-[#59554d]">
-                  {item.title}
-                </h3>
+                <div className="flex justify-between">
+                  <h3 className="text-lg font-semibold text-[#59554d]">
+                    {item.title}
+                  </h3>
+                  <p className="text-lg font-bold text-[#59554d]">
+                    {item.price}
+                  </p>
+                </div>
                 <p className="text-sm text-[#59554d] mt-2">
                   {item.description}
-                </p>
-                <p className="text-md font-bold text-[#59554d] mt-2">
-                  {item.price}
                 </p>
               </div>
 
               {/* Order button */}
-              <div className="mt-3 flex items-center gap-2 text-sm text-[#b18e63] font-medium">
-                <OrderPopup
+              <div className="mt-2 flex items-center gap-2 text-sm text-[#b18e63] font-medium">
+                <OrderPopupTwo
                   triggerText={
                     <span className="flex items-center space-x-2 cursor-pointer transition-all text-[#b18e63] hover:text-[#735c40]">
-                      <span>Place Your Order</span>
+                      <span className="text-md">Place Your Order</span>
                       <ArrowLongRightIcon className="h-5 w-5" />
                     </span>
                   }

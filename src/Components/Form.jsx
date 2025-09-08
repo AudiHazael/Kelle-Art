@@ -58,7 +58,7 @@ function Form() {
   return (
     <section className=" bg-[#f9fafb] py-8 px-2 text-[#59554d]">
       <div className="container mx-auto lg:px-8">
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center-safe">
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-10 items-center">
           {/* Left Column - Cards */}
           <div className="space-y-4">
             {/* Email */}
@@ -140,7 +140,7 @@ function Form() {
               damping: 12,
               delay: 0.5,
             }}
-            className="bg-white shadow-md rounded-md px-3 py-8 md:p-8"
+            className="bg-white shadow-md rounded-md px-3 py-8 md:p-8 "
           >
             <form
               onSubmit={handleSubmit}
@@ -207,8 +207,8 @@ function Form() {
               {/* Hidden Fields for FormSubmit */}
               <input type="hidden" name="_blacklist" value="spam, ads" />
               <input type="hidden" name="_captcha" value="false" />
-              <input type="hidden" name="_cc" value="hazaelau@gmail.com" />
-              <input type="hidden" name="_bcc" value="hazaelau@gmail.com" />
+              <input type="hidden" name="_cc" value="hazaelaudi@gmail.com" />
+              <input type="hidden" name="_bcc" value="hazaelaudi@gmail.com" />
               <input type="hidden" name="_replyto" value="%email%" />
               <input
                 type="hidden"

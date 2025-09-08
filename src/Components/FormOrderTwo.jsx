@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import ReactDOM from "react-dom";
 
-function OrderPopup({
+function OrderPopupTwo({
   triggerText = "Order Now",
   title = "Commission an Artwork",
   description = "Fill out the form below to place your order or request a custom commission.",
@@ -86,86 +86,18 @@ function OrderPopup({
             />
           </div>
 
-          {/* Type of Artwork */}
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Type of Artwork
-            </label>
-            <select
-              name="artwork-type"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-              required
-            >
-              <option value="">Select artwork type</option>
-              <option value="pencil">Pencil Portrait</option>
-              <option value="charcoal">Charcoal Drawing</option>
-              <option value="custom">Custom Request</option>
-            </select>
-          </div>
-
-          {/* Style of Artwork */}
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Style of Artwork
-            </label>
-            <select
-              name="artwork-style"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-              required
-            >
-              <option value="">Select artwork style</option>
-              <option value="Black & White">Black & White</option>
-              <option value="Oil Painting">Oil Painting</option>
-              <option value="Colored Pastel">Colored Pastel</option>
-            </select>
-          </div>
-
-          {/* Preferred Size */}
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Preferred Size
-            </label>
-            <input
-              type="text"
-              name="size"
-              placeholder="e.g., A3, A4, 16x20 inches"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-            />
-          </div>
-
-          {/* Reference Image */}
-          <div>
-            <label className="block text-sm font-medium mb-1">
-              Reference Image
-            </label>
-            <input
-              type="file"
-              name="reference"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-            />
-          </div>
-
-          {/* Deadline */}
-          <div>
-            <label className="block text-sm font-medium mb-1">Deadline</label>
-            <input
-              type="date"
-              name="deadline"
-              className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-            />
-          </div>
-
           {/* Additional Details */}
           <div>
             <label className="block text-sm font-medium mb-1">
-              Additional Details
+              Full Address
             </label>
-            <textarea
-              rows="3"
-              name="details"
-              placeholder="Any specific instructions..."
+            <input
+              type="text"
+              name="email"
+              placeholder="Your full address"
               className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
-            ></textarea>
+              required
+            />
           </div>
 
           {/* Hidden Fields */}
@@ -201,7 +133,8 @@ function OrderPopup({
       <div className="bg-white rounded-lg p-6 w-11/12 max-w-md mx-auto text-center">
         <h3 className="text-lg font-semibold mb-4">Thank You!</h3>
         <p className="text-sm text-gray-600">
-          Your order has been submitted successfully.
+          Your order has been submitted successfully. You shall recieve an email
+          shortly with an invoice and your order details
         </p>
         <button
           onClick={() => setShowPopup(false)}
@@ -228,4 +161,4 @@ function OrderPopup({
   );
 }
 
-export default OrderPopup;
+export default OrderPopupTwo;

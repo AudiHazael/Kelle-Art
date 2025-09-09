@@ -1,7 +1,7 @@
 import { SitemapStream } from "sitemap";
 import { createWriteStream, writeFileSync } from "fs";
 
-const hostname = "https://artistkelle.com";
+const hostname = "https://www.artistkelle.com";
 
 const links = [
   { url: "/", changefreq: "daily", priority: 1.0 },

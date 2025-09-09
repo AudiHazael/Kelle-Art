@@ -14,13 +14,17 @@ const links = [
 async function generateFiles() {
   // --- Generate sitemap.xml ---
   const sitemapStream = new SitemapStream({ hostname });
-  const sitemapWrite = createWriteStream("./public/sitemap.xml");
-  sitemapStream.pipe(sitemapWrite);
+  const writeStream = createWriteStream("./public/sitemap.xml", {
+    encoding: "utf8",
+  });
 
+  sitemapStream.pipe(writeStream);
+
+  // Add all links
   links.forEach((link) => sitemapStream.write(link));
   sitemapStream.end();
 
-  sitemapWrite.on("finish", () => {
+  writeStream.on("finish", () => {
     console.log("✅ sitemap.xml created in /public");
   });
 
@@ -30,7 +34,7 @@ Allow: /
 
 Sitemap: ${hostname}/sitemap.xml
 `;
-  writeFileSync("./public/robots.txt", robotsTxt);
+  writeFileSync("./public/robots.txt", robotsTxt, { encoding: "utf8" });
   console.log("✅ robots.txt created in /public");
 }
 

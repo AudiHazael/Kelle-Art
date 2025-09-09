@@ -199,8 +199,10 @@ function OrderPopup({
   const successPopup = (
     <div className="fixed inset-0 bg-black/70 flex items-center justify-center z-50">
       <div className="bg-white rounded-lg p-6 w-11/12 max-w-md mx-auto text-center">
-        <h3 className="text-lg font-semibold mb-4">Thank You!</h3>
-        <p className="text-sm text-gray-600">
+        <h3 className="text-lg text-[#59554d] font-semibold mb-4">
+          Thank You!
+        </h3>
+        <p className="text-sm text-[#59554d] ">
           Your order has been submitted successfully.
         </p>
         <button

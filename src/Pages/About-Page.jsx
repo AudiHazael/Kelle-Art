@@ -8,7 +8,7 @@ function AboutPage() {
   return (
     <div>
       <Nav />
-      <section className="about-hero bg-[#f5f5f0] py-16 px-4 sm:px-6 lg:px-8">
+      <section className="about-hero bg-[#f5f5f0] px-4 sm:px-6 lg:px-8">
         <div className="mx-auto max-w-7xl text-[#59554d] ">
           <motion.div
             className="max-w-7xl"
@@ -17,7 +17,7 @@ function AboutPage() {
             transition={{ duration: 0.6, ease: "easeOut" }}
             viewport={{ once: false, amount: 0.5 }}
           >
-            <h1 className="text-4xl font-extrabold">About Us</h1>
+            <h1 className="text-4xl font-extrabold pt-12">About Us</h1>
           </motion.div>
 
           {/* <p className="text-base md:text-lg py-4">

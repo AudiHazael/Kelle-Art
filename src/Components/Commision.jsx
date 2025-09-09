@@ -61,7 +61,7 @@ const faqs = [
 export default function Commission() {
   return (
     <div className="bg-[#f5f5f0]">
-      <section className="mx-auto px-4 py-12 space-y-12 sm:px-6 lg:px-16">
+      <section className="mx-auto px-4 py-16 space-y-12 sm:px-6 lg:px-16 max-w-[1600px] w-full">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-4  backdrop-blur-md  md:border md:border-white/10 rounded-md md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
           <div className="md:col-span-6 space-y-4 md:p-4 flex flex-col justify-center">
             <h2 className="text-2xl font-bold px-4 mb-8 text-[#59554d]">

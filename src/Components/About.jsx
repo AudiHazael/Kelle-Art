@@ -20,9 +20,9 @@ const fadeInUp = {
 
 export default function About() {
   return (
-    <div className="bg-[#f5f5f0] space-y-12">
+    <div className="bg-[#f5f5f0] space-y-12 py-16">
       {/* --- First Section --- */}
-      <section className="px-6 md:px-12 lg:px-20 py-16 text-[#59554d]">
+      <section className="px-6 md:px-12 lg:px-20 text-[#59554d]">
         <div className="max-w-screen-xl mx-auto">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-12 items-center gap-8 md:border md:border-white/10 rounded-md"
@@ -101,7 +101,7 @@ export default function About() {
       </section>
 
       {/* --- Second Section --- */}
-      <section className="px-6 md:px-12 lg:px-20 pb-16 text-[#59554d]">
+      <section className="px-6 md:px-12 lg:px-20 text-[#59554d]">
         <div className="max-w-screen-xl mx-auto">
           <motion.div
             className="grid grid-cols-1 md:grid-cols-12 gap-8 md:border md:border-white/10 rounded-md md:p-8"

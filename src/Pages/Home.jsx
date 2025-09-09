@@ -3,9 +3,11 @@ import Nav from "../Components/Nav";
 import Hero from "../Components/Hero";
 import About from "../Components/About";
 import Services from "../Components/Services";
+import ServComp from "../Components/ServComp";
 import Shop from "../Components/Shop";
 import Art from "../Components/Art";
 import Contact from "../Components/Contact";
+import Commission from "../Components/Commision";
 import Footer from "../Components/Footer";
 import FloatingWhatsapp from "../Components/FloatingWhatsApp";
 
@@ -16,9 +18,11 @@ function Home() {
       <Hero />
       <About />
       <Services />
+      <ServComp />
       <Art />
       <Shop />
       <Contact />
+      <Commission />
       <Footer />
       <FloatingWhatsapp
         phone="234 811 2378877"

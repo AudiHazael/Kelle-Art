@@ -183,6 +183,7 @@ function OrderPopup({
             </label>
             <input
               type="file"
+              accept="image/*"
               onChange={handleImageUpload}
               className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
             />
@@ -191,8 +192,21 @@ function OrderPopup({
             )}
             {imageUrl && (
               <p className="text-sm text-green-600 mt-1">
-                ✅ Image uploaded successfully
+                ✅ Uploaded —{" "}
+                <a
+                  href={imageUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline text-blue-600 hover:text-blue-800"
+                >
+                  View Image
+                </a>
               </p>
+            )}
+
+            {/* Hidden field to send URL with the form */}
+            {imageUrl && (
+              <input type="hidden" name="referenceImageUrl" value={imageUrl} />
             )}
           </div>
 

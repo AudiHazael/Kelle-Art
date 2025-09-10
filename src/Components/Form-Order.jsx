@@ -11,6 +11,26 @@ function OrderPopup({
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
 
+  // States for file upload simulation
+  const [uploading, setUploading] = useState(false);
+  const [fileReady, setFileReady] = useState(false);
+
+  const handleFileChange = (e) => {
+    if (e.target.files.length > 0) {
+      setUploading(true);
+      setFileReady(false);
+
+      // Simulate upload delay (1.5s)
+      setTimeout(() => {
+        setUploading(false);
+        setFileReady(true);
+      }, 1500);
+    } else {
+      setUploading(false);
+      setFileReady(false);
+    }
+  };
+
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -61,6 +81,7 @@ function OrderPopup({
           action="https://formsubmit.co/a28d1a59533dbecc818930a6bcab01b3"
           method="POST"
           className="space-y-4"
+          encType="multipart/form-data"
         >
           {/* Name */}
           <div>
@@ -140,16 +161,17 @@ function OrderPopup({
             </label>
             <input
               type="file"
+              name="reference"
               accept="image/*"
-              onChange={handleImageUpload}
+              onChange={handleFileChange}
               className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
             />
             {uploading && (
-              <p className="text-sm text-blue-400 mt-1">Uploading...</p>
+              <p className="text-sm text-blue-500 mt-1">Uploading...</p>
             )}
-            {imageUrl && (
+            {fileReady && (
               <p className="text-sm text-green-600 mt-1">
-                ✅ Uploaded successfully
+                ✅ File ready to submit
               </p>
             )}
           </div>

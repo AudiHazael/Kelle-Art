@@ -10,7 +10,44 @@ function OrderPopup({
   const [showPopup, setShowPopup] = useState(false);
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState(null);
+  const [uploading, setUploading] = useState(false);
+  const [imageUrl, setImageUrl] = useState("");
 
+  // Handle image upload to Cloudinary
+  const handleImageUpload = async (e) => {
+    const file = e.target.files[0];
+    if (!file) return;
+
+    setUploading(true);
+    setError(null);
+
+    const formData = new FormData();
+    formData.append("file", file);
+    formData.append("upload_preset", "Artist-Kelle");
+
+    try {
+      const res = await fetch(
+        "https://api.cloudinary.com/v1_1/duvdwkuna/image/upload",
+        {
+          method: "POST",
+          body: formData,
+        }
+      );
+      const data = await res.json();
+
+      if (data.secure_url) {
+        setImageUrl(data.secure_url);
+      } else {
+        throw new Error("Image upload failed");
+      }
+    } catch (err) {
+      setError("Image upload failed. Try again.");
+    } finally {
+      setUploading(false);
+    }
+  };
+
+  // Handle form submit
   const handleSubmit = async (e) => {
     e.preventDefault();
     setLoading(true);
@@ -18,6 +55,11 @@ function OrderPopup({
 
     const form = e.target;
     const data = new FormData(form);
+
+    // Attach Cloudinary image URL instead of raw file
+    if (imageUrl) {
+      data.set("reference", imageUrl);
+    }
 
     try {
       const response = await fetch(form.action, {
@@ -28,8 +70,9 @@ function OrderPopup({
 
       if (response.ok) {
         form.reset();
+        setImageUrl("");
         setShowPopup(true);
-        setIsOpen(false); // close form modal
+        setIsOpen(false);
       } else {
         throw new Error("Something went wrong. Please try again.");
       }
@@ -140,9 +183,31 @@ function OrderPopup({
             </label>
             <input
               type="file"
-              name="reference"
+              accept="image/*"
+              onChange={handleImageUpload}
               className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
             />
+            {uploading && (
+              <p className="text-sm text-blue-600 mt-1">Uploading...</p>
+            )}
+            {imageUrl && (
+              <p className="text-sm text-green-600 mt-1">
+                ✅ Uploaded —{" "}
+                <a
+                  href={imageUrl}
+                  target="_blank"
+                  rel="noreferrer"
+                  className="underline text-blue-600 hover:text-blue-800"
+                >
+                  View Image
+                </a>
+              </p>
+            )}
+
+            {/* Hidden field to send URL with the form */}
+            {imageUrl && (
+              <input type="hidden" name="referenceImageUrl" value={imageUrl} />
+            )}
           </div>
 
           {/* Deadline */}
@@ -182,9 +247,9 @@ function OrderPopup({
 
           <button
             type="submit"
-            disabled={loading}
+            disabled={loading || uploading}
             className={`w-full py-3 font-semibold rounded-md transition ${
-              loading
+              loading || uploading
                 ? "bg-gray-400 cursor-not-allowed"
                 : "bg-[#735c40] text-white hover:bg-[#402421]"
             }`}

@@ -140,9 +140,18 @@ function OrderPopup({
             </label>
             <input
               type="file"
-              name="reference"
+              accept="image/*"
+              onChange={handleImageUpload}
               className="w-full border border-gray-300 rounded-md px-4 py-2 focus:ring-1 focus:ring-[#735c40] focus:outline-none"
             />
+            {uploading && (
+              <p className="text-sm text-blue-400 mt-1">Uploading...</p>
+            )}
+            {imageUrl && (
+              <p className="text-sm text-green-600 mt-1">
+                ✅ Uploaded successfully
+              </p>
+            )}
           </div>
 
           {/* Deadline */}

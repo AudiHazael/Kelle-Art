@@ -92,6 +92,8 @@ export default function Shop() {
                   }
                   title={`Order: ${item.title}`}
                   description={`Complete the form below to order the "${item.title}".`}
+                  productTitle={item.title}
+                  productPrice={item.price}
                 />
               </div>
             </div>

@@ -5,6 +5,8 @@ function OrderPopupTwo({
   triggerText = "Order Now",
   title = "Commission an Artwork",
   description = "Fill out the form below to place your order or request a custom commission.",
+  productTitle,
+  productPrice,
 }) {
   const [isOpen, setIsOpen] = useState(false);
   const [showPopup, setShowPopup] = useState(false);
@@ -100,7 +102,11 @@ function OrderPopupTwo({
             />
           </div>
 
-          {/* Hidden Fields */}
+          {/* Hidden Product Fields */}
+          <input type="hidden" name="product" value={productTitle} />
+          <input type="hidden" name="price" value={productPrice} />
+
+          {/* Hidden Form Fields */}
           <input type="hidden" name="_blacklist" value="spam, ads" />
           <input type="hidden" name="_captcha" value="false" />
           <input type="hidden" name="_cc" value="hazaelaudi@gmail.com" />

@@ -7,6 +7,7 @@ import ServComp from "../Components/ServComp";
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
 import { motion } from "framer-motion";
 import OrderPopup from "../Components/Form-Order";
+import Shop from "../Components/Shop";
 
 function ServicePage() {
   return (
@@ -27,6 +28,8 @@ function ServicePage() {
 
       {/* Commission Component */}
       <Commission />
+
+      <Shop />
 
       <Footer />
     </div>

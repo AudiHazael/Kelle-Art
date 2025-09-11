@@ -63,7 +63,7 @@ function OrderPopup({
   // ---------- POPUP CONTENT ----------
   const modal = (
     <div className="fixed inset-0 bg-black/75 backdrop-blur-[2px] flex items-center justify-center z-50">
-      <div className="bg-[#f5f5f0] m-6 text-[#59554d] md:shadow-2xl w-full max-w-lg rounded-lg shadow-lg p-6 relative">
+      <div className="bg-[#f5f5f0] m-6 text-[#59554d] md:shadow-2xl w-full max-w-lg rounded-lg shadow-lg p-6 relative max-h-[90vh] overflow-y-auto">
         {/* Close Button */}
         <button
           onClick={() => setIsOpen(false)}

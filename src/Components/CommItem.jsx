@@ -26,9 +26,11 @@ export default function CommItem({ question, answer }) {
         }`}
       >
         {Array.isArray(answer) ? (
-          <ul className="list-disc list-inside space-y-1 marker:text-[#735c40] text-sm text-[#59554d] leading-relaxed">
+          <ul className="list-disc space-y-1 marker:text-[#735c40] text-sm text-[#59554d] leading-relaxed">
             {answer.map((item, idx) => (
-              <li key={idx}>{item}</li>
+              <li className="flex items-center" key={idx}>
+                {item}
+              </li>
             ))}
           </ul>
         ) : (

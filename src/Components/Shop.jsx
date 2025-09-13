@@ -89,7 +89,7 @@ export default function Shop() {
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
             viewport={{ amount: 0.5 }}
-            className="bg-white shadow-md backdrop-blur w-full h-[500px] rounded-md overflow-hidden flex flex-col"
+            className="bg-white shadow-md backdrop-blur w-full h-[520px] rounded-md overflow-hidden flex flex-col"
           >
             <img
               src={item.image}

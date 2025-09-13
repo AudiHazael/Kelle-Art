@@ -1,8 +1,9 @@
 import React from "react";
 import CommItem from "./CommItem";
-
 import { ArrowLongRightIcon } from "@heroicons/react/24/outline";
+import { motion } from "framer-motion";
 import OrderPopup from "../Components/Form-Order";
+
 const faqs = [
   {
     question: "Prizes",
@@ -62,8 +63,21 @@ export default function Commission() {
   return (
     <div className="bg-[#f5f5f0]">
       <section className="mx-auto px-4 py-16 space-y-12 sm:px-6 lg:px-16 max-w-[1600px] w-full">
-        <div className="grid grid-cols-1 md:grid-cols-12 gap-4  backdrop-blur-md  md:border md:border-white/10 rounded-md md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300">
-          <div className="md:col-span-6 space-y-4 md:p-4 flex flex-col justify-center">
+        <motion.div
+          initial={{ opacity: 0, y: 40 }}
+          whileInView={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, ease: "easeOut" }}
+          viewport={{ once: false, amount: 0.3 }} // 👈 re-triggers on scroll
+          className="grid grid-cols-1 md:grid-cols-12 gap-4 backdrop-blur-md md:border md:border-white/10 rounded-md md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300"
+        >
+          {/* Left - FAQs */}
+          <motion.div
+            initial={{ x: -50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.2 }}
+            viewport={{ once: false, amount: 0.4 }}
+            className="md:col-span-6 space-y-4 md:p-4 flex flex-col justify-center"
+          >
             <h2 className="text-2xl font-bold px-4 mb-8 text-[#59554d]">
               Commission Guide
             </h2>
@@ -72,8 +86,16 @@ export default function Commission() {
                 <CommItem key={index} {...faq} />
               ))}
             </div>
-          </div>
-          <div className="md:col-span-6 px-4 py-12 bg-white/10 rounded-md flex flex-col justify-center items-start">
+          </motion.div>
+
+          {/* Right - Highlights + Button */}
+          <motion.div
+            initial={{ x: 50, opacity: 0 }}
+            whileInView={{ x: 0, opacity: 1 }}
+            transition={{ duration: 0.7, delay: 0.4 }}
+            viewport={{ once: false, amount: 0.4 }}
+            className="md:col-span-6 px-4 py-12 bg-white/10 rounded-md flex flex-col justify-center items-start"
+          >
             <ul className="list-disc list-outside p-6 space-y-3 text-[#59554d] text-base lg:text-md font-normal mt-2 leading-relaxed">
               <li>
                 Created with the highest quality materials, designed to last a
@@ -87,7 +109,12 @@ export default function Commission() {
               <li>Worldwide shipping available.</li>
               <li>✓ 100% satisfaction guaranteed.</li>
             </ul>
-            <div className="inline-block px-6 sm:px-8   text-[#e6d8c3] bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3] transition mt-6 items-center gap-2 text-sm  font-medium">
+
+            <motion.div
+              whileHover={{ scale: 1.05 }}
+              whileTap={{ scale: 0.95 }}
+              className="inline-block px-6 sm:px-8 text-[#e6d8c3] bg-[#735c40] rounded-md hover:text-[#402421] hover:bg-[#e6d8c3] transition mt-6 items-center gap-2 text-sm font-medium"
+            >
               <OrderPopup
                 triggerText={
                   <span className="flex items-center space-x-2 cursor-pointer transition-all text-lg hover:text-[#735c40]">
@@ -98,9 +125,9 @@ export default function Commission() {
                 title="Commission Request"
                 description="Fill out the form below to commission your custom artwork."
               />
-            </div>
-          </div>
-        </div>
+            </motion.div>
+          </motion.div>
+        </motion.div>
       </section>
     </div>
   );

@@ -6,33 +6,65 @@ import OrderPopupTwo from "./FormOrderTwo";
 const products = [
   {
     title: "Breaking Loose",
-    price: "$4500",
+    price: "4500",
+    currency: "USD",
     image: "/Breaking Loose.png",
-    description: "",
+    description:
+      "A striking charcoal masterpiece full of energy and raw emotion.",
   },
   {
     title: "Purple",
-    price: "$3000",
+    price: "3000",
+    currency: "USD",
     image: "/Purple.png",
-    description: "",
+    description: "A deep-toned artwork that explores mystery and creativity.",
   },
   {
     title: "Ganja Mama",
-    price: "$3000",
+    price: "3000",
+    currency: "USD",
     image: "/Ganja-Mama.png",
-    description: "",
-    accredit: "",
+    description: "A bold piece celebrating free spirit and culture.",
   },
   {
     title: "Joker",
-    price: "$2000",
+    price: "2000",
+    currency: "USD",
     image: "/Joker.png",
-    description: "",
-    accredit: "",
+    description: "An expressive artwork capturing duality and emotion.",
   },
 ];
 
 export default function Shop() {
+  // 🔹 Build JSON-LD once for all products
+  const schemaData = {
+    "@context": "https://schema.org",
+    "@graph": products.map((item) => ({
+      "@type": "Product",
+      name: item.title,
+      image: [
+        typeof window !== "undefined"
+          ? window.location.origin + item.image
+          : item.image,
+      ],
+      description: item.description,
+      brand: {
+        "@type": "Brand",
+        name: "Artist Kelle",
+      },
+      offers: {
+        "@type": "Offer",
+        url:
+          typeof window !== "undefined"
+            ? window.location.href
+            : "https://www.artistkelle.com/shop",
+        priceCurrency: item.currency,
+        price: item.price,
+        availability: "https://schema.org/InStock",
+      },
+    })),
+  };
+
   return (
     <section className="mx-auto bg-[#f5f5f0] text-[#59554d] py-16 px-4 lg:px-24">
       <motion.div
@@ -56,13 +88,12 @@ export default function Shop() {
             initial={{ opacity: 0, y: 40 }}
             whileInView={{ opacity: 1, y: 0 }}
             transition={{ duration: 0.6, delay: index * 0.2 }}
-            viewport={{ amount: 0.5 }} // 👈 will replay every time you scroll away & back
-            className="bg-white shadow-md backdrop-blur w-full h-fit rounded-md overflow-hidden flex flex-col"
+            viewport={{ amount: 0.5 }}
+            className="bg-white shadow-md backdrop-blur w-full h-[500px] rounded-md overflow-hidden flex flex-col"
           >
             <img
               src={item.image}
               alt={item.title}
-              content={item.accredit}
               className="h-[400px] w-full object-cover rounded-t-md"
               loading="lazy"
             />
@@ -73,7 +104,7 @@ export default function Shop() {
                     {item.title}
                   </h3>
                   <p className="text-lg font-bold text-[#59554d]">
-                    {item.price}
+                    ${item.price}
                   </p>
                 </div>
                 <p className="text-sm text-[#59554d] mt-2">
@@ -100,6 +131,12 @@ export default function Shop() {
           </motion.div>
         ))}
       </div>
+
+      {/* 🔹 Inject one JSON-LD script for all products */}
+      <script
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(schemaData) }}
+      />
     </section>
   );
 }

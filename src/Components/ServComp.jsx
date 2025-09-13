@@ -6,7 +6,7 @@ import OrderPopup from "./Form-Order";
 function ServComp() {
   return (
     <div>
-      <section className="mx-auto bg-[#f5f5f0] px-4 py-16 sm:px-6 lg:px-16 flex justify-center items-center">
+      <section className="mx-auto bg-[#f5f5f0] px-4 py-8 sm:px-6 lg:px-16 flex justify-center items-center">
         <div className="grid grid-cols-1 md:grid-cols-12 gap-8 place-items-center backdrop-blur-md md:border md:border-white/10 rounded-md md:p-8 shadow-xl hover:shadow-2xl transition-all duration-300 max-w-[1600px] w-full">
           {/* Image */}
           <div className="md:col-span-5 flex justify-center">

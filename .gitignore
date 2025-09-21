@@ -29,3 +29,7 @@ dist
 .vscode
 .DS_Store
 
+# Ignore auto-generated sitemap & robots.txt
+/public/sitemap.xml
+/public/robots.txt
+

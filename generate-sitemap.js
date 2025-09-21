@@ -1,5 +1,6 @@
 import { SitemapStream } from "sitemap";
 import { createWriteStream, writeFileSync } from "fs";
+import { finished } from "stream/promises";
 
 const hostname = "https://www.artistkelle.com";
 
@@ -24,9 +25,9 @@ async function generateFiles() {
   links.forEach((link) => sitemapStream.write(link));
   sitemapStream.end();
 
-  writeStream.on("finish", () => {
-    console.log("✅ sitemap.xml created in /public");
-  });
+  // Wait until writing is finished
+  await finished(writeStream);
+  console.log("✅ sitemap.xml created in /public");
 
   // --- Generate robots.txt ---
   const robotsTxt = `User-agent: *

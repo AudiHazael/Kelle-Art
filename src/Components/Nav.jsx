@@ -47,7 +47,7 @@ const Nav = () => {
           <nav className="hidden md:block">
             <ul className="flex space-x-6 text-[#e6d8c3] font-medium">
               {["Home", "About", "Commission", "Gallery", "Contact"].map(
-                (item, index) => (
+                (item) => (
                   <motion.li
                     key={item}
                     whileHover={{ scale: 1.05 }}
@@ -60,7 +60,7 @@ const Nav = () => {
                           : item === "Gallery"
                           ? "/gallery"
                           : item === "Contact"
-                          ? "/contact-page"
+                          ? "/contact" // ✅ fixed here
                           : item === "Commission"
                           ? "/services"
                           : `/${item.toLowerCase()}`
@@ -101,7 +101,7 @@ const Nav = () => {
                             : item === "Gallery"
                             ? "/gallery"
                             : item === "Contact"
-                            ? "/contact-page"
+                            ? "/contact" // ✅ fixed here too
                             : item === "Commission"
                             ? "/services"
                             : `/${item.toLowerCase()}`

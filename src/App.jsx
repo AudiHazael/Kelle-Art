@@ -1,6 +1,7 @@
 import React, { useEffect } from "react";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import "./index.css";
+
 import Home from "./Pages/Home";
 import ContactPage from "./Pages/Contact-Page";
 import AboutPage from "./Pages/About-Page";
@@ -22,11 +23,10 @@ function App() {
     <Router>
       <Routes>
         <Route path="/" element={<Home />} />
-        <Route path="/contact-page" element={<ContactPage />} />
         <Route path="/about" element={<AboutPage />} />
         <Route path="/services" element={<ServicePage />} />
-
         <Route path="/gallery" element={<Gallery />} />
+        <Route path="/contact" element={<ContactPage />} />
         {/* <Route path="/shop" element={<ShopPage />} /> */}
         {/* <Route path="*" element={<Error />} /> */}
       </Routes>

@@ -1,42 +1,27 @@
-import { SitemapStream } from "sitemap";
-import { createWriteStream, writeFileSync } from "fs";
-import { finished } from "stream/promises";
+import { SitemapStream, streamToPromise } from "sitemap";
+import { createWriteStream } from "fs";
 
-const hostname = "https://www.artistkelle.com";
+const siteUrl = "https://www.artistkelle.com"; // your real domain
 
-const links = [
-  { url: "/", changefreq: "daily", priority: 1.0 },
-  { url: "/about", changefreq: "weekly", priority: 0.8 },
-  { url: "/services", changefreq: "weekly", priority: 0.8 },
-  { url: "/gallery", changefreq: "weekly", priority: 0.7 },
-  { url: "/contact-page", changefreq: "monthly", priority: 0.6 },
-];
+async function generateSitemap() {
+  const sitemap = new SitemapStream({ hostname: siteUrl });
 
-async function generateFiles() {
-  // --- Generate sitemap.xml ---
-  const sitemapStream = new SitemapStream({ hostname });
-  const writeStream = createWriteStream("./public/sitemap.xml", {
-    encoding: "utf8",
-  });
+  // List of all routes in your portfolio site
+  const pages = [
+    { url: "/", changefreq: "weekly", priority: 1.0 },
+    { url: "/about", changefreq: "monthly", priority: 0.8 },
+    { url: "/services", changefreq: "monthly", priority: 0.8 },
+    { url: "/gallery", changefreq: "weekly", priority: 0.7 },
+    { url: "/contact", changefreq: "monthly", priority: 0.6 },
+  ];
 
-  sitemapStream.pipe(writeStream);
+  pages.forEach((page) => sitemap.write(page));
+  sitemap.end();
 
-  // Add all links
-  links.forEach((link) => sitemapStream.write(link));
-  sitemapStream.end();
-
-  // Wait until writing is finished
-  await finished(writeStream);
-  console.log("✅ sitemap.xml created in /public");
-
-  // --- Generate robots.txt ---
-  const robotsTxt = `User-agent: *
-Allow: /
-
-Sitemap: ${hostname}/sitemap.xml
-`;
-  writeFileSync("./public/robots.txt", robotsTxt, { encoding: "utf8" });
-  console.log("✅ robots.txt created in /public");
+  const sitemapOutput = await streamToPromise(sitemap);
+  createWriteStream("./public/sitemap.xml").write(sitemapOutput.toString());
 }
 
-generateFiles();
+generateSitemap()
+  .then(() => console.log("✅ Sitemap generated successfully!"))
+  .catch((err) => console.error("❌ Error generating sitemap:", err));
